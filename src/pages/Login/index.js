@@ -1,10 +1,22 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
+import FormLogin from '../../components/FormLogin';
+import FormToken from '../../components/FormToken';
 
 function Login() {
+  const loginDone = useSelector((state) => state.user);
+
   return (
-    <div>
-      <p>Login Aqui</p>
-    </div>
+    <section>
+      <main>
+        {
+          !loginDone.email && !loginDone.password
+            ? <FormLogin />
+            : <FormToken />
+        }
+      </main>
+    </section>
   );
 }
 
