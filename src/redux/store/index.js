@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-// import user from '../reducers/user';
+import login from '../reducers/loginSlice';
 // import orders from '../reducers/orders';
 // import assets from '../reducers/assets';
 // import negotiation from '../reducers/negotiation';
@@ -10,7 +10,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 const store = configureStore({
   reducer: {
-    // user,
+    login,
     // orders,
     // assets,
     // negotiation,
