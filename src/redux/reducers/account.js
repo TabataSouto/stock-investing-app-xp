@@ -7,6 +7,8 @@ const initialState = {
   rentValue: 0.00,
   bank: '',
   operationType: '',
+  transitionValue: 0,
+  notAllowed: false,
 };
 
 const accoutSlice = createSlice({
@@ -35,12 +37,24 @@ const accoutSlice = createSlice({
     operationType: (state, action) => {
       state.operationType = action.payload;
     },
+    valueTransition: (state, action) => {
+      state.transitionValue = +action.payload;
+    },
+    deposit: (state, action) => {
+      state.balance += action.payload;
+    },
+    withdrawal: (state, action) => {
+      state.balance -= action.payload;
+    },
+    notAllowed: (state, action) => {
+      state.notAllowed = action.payload;
+    },
   },
 });
 
 export const {
   incrementBalanceRent, incrementBalance, decrementBalance, isLeveraged,
-  selectedBank, operationType,
+  selectedBank, operationType, valueTransition, deposit, withdrawal, notAllowed,
 } = accoutSlice.actions;
 
 export default accoutSlice.reducer;

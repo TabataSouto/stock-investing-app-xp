@@ -10,6 +10,7 @@ function Input({
   value,
   onChange,
   disabled,
+  max,
 }) {
   return (
     <label htmlFor={id}>
@@ -21,7 +22,7 @@ function Input({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
-        max="100"
+        max={max}
         autoComplete="on"
         disabled={disabled}
       />
@@ -30,6 +31,7 @@ function Input({
 }
 
 Input.propTypes = {
+  max: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,

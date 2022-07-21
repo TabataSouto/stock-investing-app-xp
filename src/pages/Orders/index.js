@@ -23,6 +23,7 @@ function Orders() {
         value={filtered}
         onChange={handleChange}
         disabled={false}
+        max={100}
       />
       <Table
         orders={executedOrders

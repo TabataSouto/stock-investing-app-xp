@@ -35,6 +35,7 @@ function Token() {
         value={token}
         onChange={handleChange}
         disabled={false}
+        max={100}
       />
       <Button
         name="token-validation"

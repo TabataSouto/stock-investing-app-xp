@@ -2,26 +2,33 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   operationType,
-  // incrementBalance,
   selectedBank,
+  valueTransition,
 } from '../../redux/reducers/account';
 import Input from '../Input';
 import Button from '../Button';
 
 function BankAccounts() {
-  const [bank, setBank] = useState('');
+  const [bank, setBank] = useState({
+    bankAccount: '',
+    value: 0,
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(selectedBank(bank));
+    dispatch(selectedBank(bank.bankAccount));
+    dispatch(valueTransition(bank.value));
   }, [bank]);
 
   const handleChange = ({ target }) => {
-    setBank(target.value);
+    setBank({
+      ...bank,
+      [target.name]: target.value,
+    });
   };
 
   const handleClick = ({ target: { name } }) => {
-    dispatch((operationType(name)));
+    dispatch(operationType(name));
   };
 
   return (
@@ -29,7 +36,7 @@ function BankAccounts() {
       <label htmlFor="itau">
         <input
           id="itau"
-          name="bank"
+          name="bankAccount"
           type="radio"
           value="itau"
           onChange={handleChange}
@@ -39,7 +46,7 @@ function BankAccounts() {
       <label htmlFor="bradesco">
         <input
           id="bradesco"
-          name="bank"
+          name="bankAccount"
           type="radio"
           value="bradesco"
           onChange={handleChange}
@@ -48,13 +55,14 @@ function BankAccounts() {
       </label>
       <Input
         title=""
-        id="token-validation"
-        type="text"
-        name="token"
-        placeholder=""
-        value=""
-        onChange={() => {}}
+        id="value-trans"
+        type="number"
+        name="value"
+        placeholder="Digite o valor"
+        value={bank.value}
+        onChange={handleChange}
         disabled={false}
+        max={10000}
       />
       <Button
         name="Depósito"

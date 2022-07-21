@@ -36,6 +36,7 @@ function Form() {
         placeholder="E-mail"
         onChange={handleChange}
         disabled={false}
+        max={100}
       />
       <Input
         title=""
@@ -46,6 +47,7 @@ function Form() {
         placeholder="password"
         onChange={handleChange}
         disabled={false}
+        max={100}
       />
       <Button
         name="logar"

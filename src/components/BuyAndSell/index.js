@@ -72,8 +72,6 @@ function BuyAndSell() {
   const isButtonDisabled = electronicPassword.pass.length < 6
     || electronicPassword.pass.length > 8;
 
-  console.log((account.balance - buy.calc));
-
   return (
     <section>
       <p>{ `Financeiro da ordem: ${buy.calc > 0 ? buy.calc : sell.calc}` }</p>
@@ -105,6 +103,7 @@ function BuyAndSell() {
             placeholder="Assinatura eletrônica"
             onChange={handleChange}
             disabled={false}
+            max={10000}
           />
           <button
             name="go-back"

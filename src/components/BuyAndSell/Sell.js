@@ -45,6 +45,7 @@ function Sell() {
         placeholder="Informe a quantidade"
         onChange={handleChange}
         disabled={toSell.buy > 0 && true}
+        max={10000}
       />
     </Style.Div>
   );
