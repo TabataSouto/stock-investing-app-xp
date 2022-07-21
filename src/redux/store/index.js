@@ -6,7 +6,7 @@ import orders from '../reducers/orders';
 import account from '../reducers/account';
 import buy from '../reducers/buyAsset';
 import sell from '../reducers/sellAsset';
-import negotiation from '../reducers/negotiation';
+// import negotiation from '../reducers/negotiation';
 
 const store = configureStore({
   reducer: {
@@ -16,7 +16,7 @@ const store = configureStore({
     account,
     buy,
     sell,
-    negotiation,
+    // negotiation,
   },
 });
 
