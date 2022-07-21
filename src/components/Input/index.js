@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 function Input({
+  title,
   id,
   type,
   name,
@@ -9,9 +10,11 @@ function Input({
   value,
   onChange,
   disabled,
+  max,
 }) {
   return (
     <label htmlFor={id}>
+      { title }
       <input
         id={id}
         type={type}
@@ -19,7 +22,7 @@ function Input({
         value={value}
         placeholder={placeholder}
         onChange={onChange}
-        max="100"
+        max={max}
         autoComplete="on"
         disabled={disabled}
       />
@@ -28,6 +31,8 @@ function Input({
 }
 
 Input.propTypes = {
+  max: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,

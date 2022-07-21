@@ -28,6 +28,7 @@ function Form() {
   return (
     <form>
       <Input
+        title=""
         id="email-input"
         type="text"
         name="email"
@@ -35,8 +36,10 @@ function Form() {
         placeholder="E-mail"
         onChange={handleChange}
         disabled={false}
+        max={100}
       />
       <Input
+        title=""
         id="password-input"
         type="password"
         name="password"
@@ -44,6 +47,7 @@ function Form() {
         placeholder="password"
         onChange={handleChange}
         disabled={false}
+        max={100}
       />
       <Button
         name="logar"

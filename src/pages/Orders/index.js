@@ -15,6 +15,7 @@ function Orders() {
   return (
     <section>
       <Input
+        title=""
         id="filter-asset"
         type="text"
         name="filter-asset"
@@ -22,6 +23,7 @@ function Orders() {
         value={filtered}
         onChange={handleChange}
         disabled={false}
+        max={100}
       />
       <Table
         orders={executedOrders

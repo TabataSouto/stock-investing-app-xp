@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addQtde, calcPurchase, saleWithRent } from '../../redux/reducers/sellAsset';
+import {
+  addQtde, calcPurchase, saleStillWithRent, saleWithRent,
+} from '../../redux/reducers/sellAsset';
 
 import Input from '../Input';
 import Style from './Style';
@@ -16,9 +18,14 @@ function Sell() {
   const [orderQtde, setOrderQtde] = useState({ qtde: 0, value: toSell.asset.amount });
 
   useEffect(() => {
-    const verifyWallet = toSell.orders
+    const isRentVerify = toSell.orders
       .some((order) => order.paper === toSell.asset.paper);
-    dispatch(saleWithRent(!verifyWallet));
+    const stillRentVerify = toSell.orders
+      .some((order) => order.paper === toSell.asset.paper && order.isRent && order.iseSell);
+    const stillRent = stillRentVerify && true;
+
+    dispatch(saleStillWithRent(stillRent));
+    dispatch(saleWithRent(!isRentVerify));
     dispatch(addQtde(orderQtde));
     dispatch(calcPurchase(orderQtde));
   }, [orderQtde, toSell]);
@@ -29,8 +36,8 @@ function Sell() {
 
   return (
     <Style.Div>
-      <p>Vender</p>
       <Input
+        title="Vender"
         id="buy-asset"
         type="number"
         name="sell"
@@ -38,6 +45,7 @@ function Sell() {
         placeholder="Informe a quantidade"
         onChange={handleChange}
         disabled={toSell.buy > 0 && true}
+        max={10000}
       />
     </Style.Div>
   );
