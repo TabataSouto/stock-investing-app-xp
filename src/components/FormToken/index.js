@@ -8,7 +8,7 @@ import Button from '../Button';
 import Input from '../Input';
 
 function Token() {
-  const user = useSelector((state) => state.user.email);
+  const user = useSelector((state) => state.login.email);
   const navigate = useNavigate();
 
   const [isDidabled, setIsDisabled] = useState(true);

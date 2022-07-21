@@ -5,7 +5,7 @@ import FormLogin from '../../components/FormLogin';
 import FormToken from '../../components/FormToken';
 
 function Login() {
-  const loginDone = useSelector((state) => state.user);
+  const loginDone = useSelector((state) => state.login);
 
   return (
     <section>
