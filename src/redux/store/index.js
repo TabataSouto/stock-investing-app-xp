@@ -1,22 +1,22 @@
 import { configureStore } from '@reduxjs/toolkit';
 
 import login from '../reducers/loginSlice';
-// import orders from '../reducers/orders';
-// import assets from '../reducers/assets';
+import assets from '../reducers/assets';
+import orders from '../reducers/orders';
+import account from '../reducers/account';
+import buy from '../reducers/buyAsset';
+import sell from '../reducers/sellAsset';
 // import negotiation from '../reducers/negotiation';
-// import account from '../reducers/account';
-// import buy from '../reducers/buyAsset';
-// import sell from '../reducers/sellAsset';
 
 const store = configureStore({
   reducer: {
     login,
-    // orders,
-    // assets,
+    assets,
+    orders,
+    account,
+    buy,
+    sell,
     // negotiation,
-    // account,
-    // buy,
-    // sell,
   },
 });
 
