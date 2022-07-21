@@ -5,6 +5,8 @@ const initialState = {
   isLeveraged: false,
   leveradedValue: 0.00,
   rentValue: 0.00,
+  bank: '',
+  operationType: '',
 };
 
 const accoutSlice = createSlice({
@@ -27,11 +29,18 @@ const accoutSlice = createSlice({
     isLeveraged: (state, action) => {
       state.isLeveraged = action.payload >= state.balance;
     },
+    selectedBank: (state, action) => {
+      state.bank = action.payload;
+    },
+    operationType: (state, action) => {
+      state.operationType = action.payload;
+    },
   },
 });
 
 export const {
   incrementBalanceRent, incrementBalance, decrementBalance, isLeveraged,
+  selectedBank, operationType,
 } = accoutSlice.actions;
 
 export default accoutSlice.reducer;

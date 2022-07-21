@@ -8,18 +8,6 @@ function FinancialTransaction() {
     <section>
       <Header />
       <Account />
-      {/* { electronicPassword.confirm
-            ? <p>Operação confirmada com sucesso!</p>
-            : (
-              <button
-                name="confirm"
-                type="button"
-                onClick={handleClick}
-                disabled={isButtonDisabled}
-              >
-                Confirmar
-              </button>
-            )} */}
     </section>
   );
 }

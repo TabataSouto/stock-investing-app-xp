@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import BankAccounts from '../BankAccounts';
-import DepositWithdrawal from '../DepositWithdrawal';
 import Button from '../Button';
 
 function Account() {
@@ -47,7 +46,6 @@ function Account() {
       </div>
       <form>
         <BankAccounts />
-        <DepositWithdrawal />
         <Button
           name="go-back"
           disabled={false}
