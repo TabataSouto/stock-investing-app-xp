@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import orderType from '../../helpers/orderType';
-import { decrementBalance, incrementBalance } from '../../redux/reducers/account';
+import { decrementBalance, incrementBalance, incrementBalanceRent } from '../../redux/reducers/account';
 import { addExecutedOrder } from '../../redux/reducers/orders';
 import currentDate from '../../helpers/currentDate';
 
@@ -19,7 +19,7 @@ function BuyAndSell() {
     asset, buy, sell, account,
   } = useSelector((state) => ({
     asset: state.negotiation.asset[0],
-    account: state.account.isLeveraged,
+    account: state.account,
     buy: state.buy,
     sell: state.sell,
     orders: state.orders,
@@ -31,8 +31,8 @@ function BuyAndSell() {
       direction: document.getElementById('l').innerText,
       amount: buy.qtde === 0 ? sell.calc : buy.calc,
       quantity: buy.qtde === 0 ? Number(sell.qtde) : Number(buy.qtde),
-      idLeveraged: account,
-      isRent: sell.isRent,
+      isLeveraged: (account.balance - buy.calc) < 0,
+      isRent: sell.qtde > 0 && sell.isRent,
       isBuy: buy.qtde > 0,
       isSell: sell.qtde > 0 || sell.qtde < 0,
       status: 'executada',
@@ -42,10 +42,13 @@ function BuyAndSell() {
     if (name === 'confirm') {
       dispatch(addExecutedOrder(order));
       if (buy.qtde > 0) {
-        dispatch(decrementBalance(buy.calc));
+        dispatch(decrementBalance(order));
+      }
+      if (sell.qtde > 0 && sell.isRent) {
+        dispatch(incrementBalanceRent(order));
       }
       if (sell.qtde > 0) {
-        dispatch(incrementBalance(sell.calc));
+        dispatch(incrementBalance(order));
       }
     } else {
       navigate('/assets');
@@ -69,6 +72,8 @@ function BuyAndSell() {
   const isButtonDisabled = electronicPassword.pass.length < 6
     || electronicPassword.pass.length > 8;
 
+  console.log((account.balance - buy.calc));
+
   return (
     <section>
       <p>{ `Financeiro da ordem: ${buy.calc > 0 ? buy.calc : sell.calc}` }</p>
@@ -84,10 +89,10 @@ function BuyAndSell() {
           Operação alavancada:
           <span id="a">
             {' '}
-            { account ? 'sim' : 'não' }
+            { (account.balance - buy.calc) < 0 && buy.qtde > 0 ? 'sim' : 'não' }
           </span>
         </p>
-        { sell.qtde > 0 && !sell.isRent && <p>Tomar aluguel (BTC): sim </p> }
+        { sell.qtde > 0 && sell.isRent && <p>Tomar aluguel (BTC): sim </p> }
         <form>
           <Buy />
           <Sell />

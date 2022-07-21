@@ -1,26 +1,13 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import Account from '../../components/Account';
 import Header from '../../components/Header';
 
 function FinancialTransaction() {
-  const navigate = useNavigate();
-  const handleClick = ({ target: { name } }) => {
-    if (name === 'confirm') {
-      return;
-    }
-    navigate('/assets');
-  };
-
   return (
     <section>
       <Header />
-      <button
-        name="go-back"
-        type="button"
-        onClick={handleClick}
-      >
-        Voltar
-      </button>
+      <Account />
       {/* { electronicPassword.confirm
             ? <p>Operação confirmada com sucesso!</p>
             : (
