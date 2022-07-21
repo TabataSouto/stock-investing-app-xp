@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import orderType from '../../helpers/orderType';
 import { decrementBalance, incrementBalance } from '../../redux/reducers/account';
 import { addExecutedOrder } from '../../redux/reducers/orders';
+import currentDate from '../../helpers/currentDate';
 
 import Buy from './Buy';
 import Sell from './Sell';
@@ -34,6 +35,8 @@ function BuyAndSell() {
       isRent: sell.isRent,
       isBuy: buy.qtde > 0,
       isSell: sell.qtde > 0 || sell.qtde < 0,
+      status: 'executada',
+      dataAndHour: currentDate(),
     };
 
     if (name === 'confirm') {
