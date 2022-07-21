@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 function Input({
+  title,
   id,
   type,
   name,
@@ -12,6 +13,7 @@ function Input({
 }) {
   return (
     <label htmlFor={id}>
+      { title }
       <input
         id={id}
         type={type}
@@ -28,6 +30,7 @@ function Input({
 }
 
 Input.propTypes = {
+  title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string.isRequired,

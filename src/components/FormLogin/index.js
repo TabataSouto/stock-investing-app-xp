@@ -28,6 +28,7 @@ function Form() {
   return (
     <form>
       <Input
+        title=""
         id="email-input"
         type="text"
         name="email"
@@ -37,6 +38,7 @@ function Form() {
         disabled={false}
       />
       <Input
+        title=""
         id="password-input"
         type="password"
         name="password"

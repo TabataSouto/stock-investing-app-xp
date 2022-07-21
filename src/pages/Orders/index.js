@@ -15,6 +15,7 @@ function Orders() {
   return (
     <section>
       <Input
+        title=""
         id="filter-asset"
         type="text"
         name="filter-asset"

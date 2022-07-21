@@ -92,6 +92,7 @@ function BuyAndSell() {
           <Buy />
           <Sell />
           <Input
+            title=""
             id="ass-eletronica"
             type="text"
             name="ass-eletronica"

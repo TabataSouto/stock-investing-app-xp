@@ -27,8 +27,8 @@ function Buy() {
 
   return (
     <Style.Div>
-      <p>Comprar</p>
       <Input
+        title="Comprar"
         id="buy-asset"
         type="number"
         name="buy"

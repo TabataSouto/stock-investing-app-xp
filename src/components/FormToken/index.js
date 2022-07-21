@@ -27,6 +27,7 @@ function Token() {
       <h1>{ `Olá, ${user}!`}</h1>
       <p>Difgite seu token:</p>
       <Input
+        title=""
         id="token-validation"
         type="text"
         name="token"
