@@ -10,16 +10,16 @@ function Login() {
   const loginDone = useSelector((state) => state.login);
 
   return (
-    <Style.ContainerLogin>
+    <Style.LoginContainer>
       <Header />
-      <Style.MainLogin>
+      <Style.LoginMain>
         {
           !loginDone.email && !loginDone.password
             ? <FormLogin />
             : <FormToken />
         }
-      </Style.MainLogin>
-    </Style.ContainerLogin>
+      </Style.LoginMain>
+    </Style.LoginContainer>
   );
 }
 

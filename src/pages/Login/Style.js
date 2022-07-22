@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-const ContainerLogin = styled.section`
+const LoginContainer = styled.section`
   background: black;
   background-size: contain;
   height: 100vh;
 `;
 
-const MainLogin = styled.main`
+const LoginMain = styled.main`
   align-items: center;
   display: flex;
   justify-content: center;
@@ -14,6 +14,6 @@ const MainLogin = styled.main`
 `;
 
 export default {
-  ContainerLogin,
-  MainLogin,
+  LoginContainer,
+  LoginMain,
 };
