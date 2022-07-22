@@ -7,21 +7,17 @@ const HeaderContainer = styled.header`
   height: 4.5em;
   justify-content: space-between;
   padding: 0 3cm;
-  img {
+  & img {
     margin-top: 5px;
     width: 42px;
   }
-  p {
+  & p {
     margin-top: 5px;
     color: ${({ theme }) => theme.colors.header};
     text-transform:  uppercase;
   }
 `;
 
-const test = styled.div`
-`;
-
 export default {
   HeaderContainer,
-  test,
 };

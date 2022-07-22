@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '../Button';
 import Input from '../Input';
-
 import loginValidation from '../../helpers/login.validation';
 import { userLogin } from '../../redux/reducers/loginSlice';
 import storage from '../../helpers/storage';
+import Style from './Style';
+import security from '../../images/security.svg';
 
 function Form() {
   const [login, setLogin] = useState({ email: '', password: '' });
@@ -26,36 +27,42 @@ function Form() {
   };
 
   return (
-    <form>
-      <Input
-        title="E-mail do cliente"
-        id="email-input"
-        type="text"
-        name="email"
-        value={login.email}
-        placeholder="E-mail"
-        onChange={handleChange}
-        disabled={false}
-        max={100}
-      />
-      <Input
-        title=""
-        id="password-input"
-        type="password"
-        name="password"
-        value={login.password}
-        placeholder="password"
-        onChange={handleChange}
-        disabled={false}
-        max={100}
-      />
-      <Button
-        name="logar"
-        onClick={handleClick}
-        disabled={isDidabled}
-        title="Entrar"
-      />
-    </form>
+    <Style.FormContainer>
+      <Style.DivForm>
+        <img src={security} alt="icone cadeado" />
+        <p>Ambiente Seguro</p>
+      </Style.DivForm>
+      <Style.Form>
+        <Input
+          title=""
+          id="email-input"
+          type="text"
+          name="email"
+          value={login.email}
+          placeholder="E-mail"
+          onChange={handleChange}
+          disabled={false}
+          max={100}
+        />
+        <Input
+          title=""
+          id="password-input"
+          type="password"
+          name="password"
+          value={login.password}
+          placeholder="password"
+          onChange={handleChange}
+          disabled={false}
+          max={100}
+        />
+        <Button
+          name="logar"
+          onClick={handleClick}
+          disabled={isDidabled}
+          title="Entrar"
+        />
+      </Style.Form>
+    </Style.FormContainer>
   );
 }
 

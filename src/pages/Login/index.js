@@ -4,21 +4,22 @@ import { useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import FormLogin from '../../components/FormLogin';
 import FormToken from '../../components/FormToken';
+import Style from './Style';
 
 function Login() {
   const loginDone = useSelector((state) => state.login);
 
   return (
-    <section>
+    <Style.ContainerLogin>
       <Header />
-      <main>
+      <Style.MainLogin>
         {
           !loginDone.email && !loginDone.password
             ? <FormLogin />
             : <FormToken />
         }
-      </main>
-    </section>
+      </Style.MainLogin>
+    </Style.ContainerLogin>
   );
 }
 
