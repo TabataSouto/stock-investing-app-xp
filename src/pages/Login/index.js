@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+import Header from '../../components/Header';
 import FormLogin from '../../components/FormLogin';
 import FormToken from '../../components/FormToken';
 
@@ -9,6 +10,7 @@ function Login() {
 
   return (
     <section>
+      <Header />
       <main>
         {
           !loginDone.email && !loginDone.password
