@@ -13,7 +13,7 @@ const HeaderContainer = styled.header`
   }
   & p {
     margin-top: 5px;
-    color: ${({ theme }) => theme.colors.header};
+    color: ${({ theme }) => theme.colors.headerText};
     text-transform:  uppercase;
   }
 `;

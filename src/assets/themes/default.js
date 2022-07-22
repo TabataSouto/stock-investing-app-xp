@@ -1,27 +1,16 @@
 const themes = {
   colors: {
-    header: '#ffffff',
-    login: {
-      // placeholder: '#ffc709',
-      placeholder: '#e5af00',
-    },
+    headerText: '#ffffff',
+    placeholder: '#e5af00',
   },
   backgrounds: {
     header: '#222222',
-  },
-  buttons: {
-    login: {
-      buttonDisabled: '#eeeeee',
-      buttonEnabled: '#ffc709',
-    },
+    disabledButton: '#eeeeee',
+    enabledButton: '#ffc709',
   },
   borders: {
-    login: {
-      contour: '#ddd',
-      bottom: '#18191A',
-    },
-  },
-  fonts: {
+    contourContainer: '#ddd',
+    bottomInput: '#18191A',
   },
 };
 

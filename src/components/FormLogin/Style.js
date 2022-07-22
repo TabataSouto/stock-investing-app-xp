@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.section`
   background-color: white;
-  border: 1px solid ${({ theme }) => theme.borders.login.contour};
+  border: 1px solid ${({ theme }) => theme.borders.contourContainer};
   display: flex;
   flex-direction: column;
   height: 25em;
@@ -47,18 +47,18 @@ const Form = styled.form`
   justify-content: space-between;
   & input {
     border: none;
-    border-bottom: 2px solid ${({ theme }) => theme.borders.login.bottom};
+    border-bottom: 2px solid ${({ theme }) => theme.borders.bottomInput};
     font-size: 16px;
     outline: none;
     padding: 12px;
     text-align: center;
     width: 100%;
     &::placeholder {
-      color: ${({ theme }) => theme.colors.login.placeholder}
+      color: ${({ theme }) => theme.colors.placeholder}
     }
   }
   & button {
-    background: ${({ theme }) => theme.buttons.login.buttonDisabled};
+    background: ${({ theme }) => theme.backgrounds.disabledButton};
     border: none;
     font-weight: 700;
     font-size: 14px;
@@ -68,7 +68,7 @@ const Form = styled.form`
     transition: background 1s;
     text-transform: uppercase;
     &:enabled {
-      background: ${({ theme }) => theme.buttons.login.buttonEnabled};
+      background: ${({ theme }) => theme.backgrounds.enabledButton};
     }
   }
 `;
