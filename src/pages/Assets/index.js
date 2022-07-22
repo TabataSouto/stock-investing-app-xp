@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
 import CardAssets from '../../components/CardAssets';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
-
 import { fetchAssets } from '../../redux/reducers/assets';
+import Style from './Style';
 
 function Assets() {
   const assets = useSelector((state) => state.assets.list);
@@ -21,9 +20,9 @@ function Assets() {
   }, [ordersExecuted]);
 
   return (
-    <section>
+    <Style.AssetContainer>
       <Header />
-      <main>
+      <Style.MainAssets>
         <CardAssets
           title="Minhas Ações:"
           assets={ordersExecuted}
@@ -36,7 +35,7 @@ function Assets() {
                 .every((order) => asset.paper !== order.paper))
             }
         />
-      </main>
+      </Style.MainAssets>
       <Footer />
       <Button
         name="orders-status"
@@ -44,7 +43,7 @@ function Assets() {
         onClick={() => navigate('/orders')}
         title="Status ordens"
       />
-    </section>
+    </Style.AssetContainer>
   );
 }
 

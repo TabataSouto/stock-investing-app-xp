@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { stockToBeTraded } from '../../redux/reducers/negotiation';
 import Button from '../Button';
+import Style from './Style';
 
 function CardAssets({ title, assets }) {
   const unitAsset = useSelector((state) => state.assets.list);
@@ -16,38 +17,44 @@ function CardAssets({ title, assets }) {
   };
 
   return (
-    <section>
+    <Style.TableContainer>
       <h3>{title}</h3>
-      <div>
-        <p>Ação</p>
-        <p>Qtde</p>
-        <p>Valor (R$)</p>
-        <p>Negociar</p>
-      </div>
-      <main>
-        { assets.length > 0 && assets.map(({
-          paper, quantity, amount,
-        }) => (
-          <div key={paper}>
-            <p>{paper}</p>
-            <p>{quantity}</p>
-            <p>{amount.toFixed(2)}</p>
-            <Button
-              name={paper}
-              disabled={false}
-              onClick={handleClick}
-              title="C"
-            />
-            <Button
-              name={paper}
-              disabled={false}
-              onClick={handleClick}
-              title="V"
-            />
-          </div>
-        )) }
-      </main>
-    </section>
+      <Style.TableCardAssets>
+        <Style.TheadCardAssets>
+          <tr>
+            <th>Ação</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Negociar</th>
+          </tr>
+        </Style.TheadCardAssets>
+        <Style.TbodyCardAssets>
+          { assets.length > 0 && assets.map(({
+            paper, quantity, amount,
+          }) => (
+            <tr key={paper}>
+              <td>{paper}</td>
+              <td>{quantity}</td>
+              <td>{amount.toFixed(2)}</td>
+              <td>
+                <Button
+                  name={paper}
+                  disabled={false}
+                  onClick={handleClick}
+                  title="C"
+                />
+                <Button
+                  name={paper}
+                  disabled={false}
+                  onClick={handleClick}
+                  title="V"
+                />
+              </td>
+            </tr>
+          ))}
+        </Style.TbodyCardAssets>
+      </Style.TableCardAssets>
+    </Style.TableContainer>
   );
 }
 
