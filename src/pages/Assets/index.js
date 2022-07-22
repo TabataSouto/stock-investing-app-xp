@@ -35,14 +35,14 @@ function Assets() {
                 .every((order) => asset.paper !== order.paper))
             }
         />
+        <Button
+          name="orders-status"
+          disabled={false}
+          onClick={() => navigate('/orders')}
+          title="Status ordens"
+        />
       </Style.MainAssets>
       <Footer />
-      <Button
-        name="orders-status"
-        disabled={false}
-        onClick={() => navigate('/orders')}
-        title="Status ordens"
-      />
     </Style.AssetContainer>
   );
 }

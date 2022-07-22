@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const TableContainer = styled.section`
+  font-size: 15px;
   border: solid 1px ${({ theme }) => theme.borders.contourAssetsTable};
   width: 50%;
   & h3 {
@@ -21,7 +22,7 @@ const TableCardAssets = styled.table`
 
 const TheadCardAssets = styled.thead`
   & th {
-    padding: 10px 0;
+    padding: 5px 0;
     font-size: 13px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -31,7 +32,7 @@ const TheadCardAssets = styled.thead`
 const TbodyCardAssets = styled.tbody`
   & td {
     color: #707070;
-    padding: 5px;
+    padding: 4px;
     transition: background .5s, color .5s;
   }
   & td:nth-child(4) button {
@@ -41,7 +42,7 @@ const TbodyCardAssets = styled.tbody`
     height: 20px;
     margin: 0 5px;
     width: 20px;
-    transition: background .5s;
+    transition: background .5s, color .5s;
   }
   & tr td button:nth-child(1) {
     background: ${({ theme }) => theme.backgrounds.buyButton};
@@ -51,9 +52,11 @@ const TbodyCardAssets = styled.tbody`
   }
   & tr:hover td:nth-child(4) {
     & button:nth-child(1) {
+      color: black;
       background: ${({ theme }) => theme.backgrounds.buyButtonHover};
     }
     & button:nth-child(2) {
+      color: black;
       background: ${({ theme }) => theme.backgrounds.sellButtonHover};
     }
   }

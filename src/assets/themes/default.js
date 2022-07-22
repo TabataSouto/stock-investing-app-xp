@@ -9,6 +9,8 @@ const themes = {
     header: '#222222',
     disabledButton: '#eeeeee',
     enabledButton: '#ffc709',
+    footerButton: '#ffc709',
+    footerButtonHover: '#ffe399',
     assetsTitle: '#b2b2b2',
     tableTitle: '#ddd',
     assetsInTable: '#eeeeee',
@@ -21,6 +23,7 @@ const themes = {
     contourContainer: '#ddd',
     bottomInput: '#18191A',
     contourAssetsTable: '#b2b2b2',
+    statusOrdersButton: '#ffc709',
   },
 };
 

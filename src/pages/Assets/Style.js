@@ -1,14 +1,27 @@
 import styled from 'styled-components';
 
 const AssetContainer = styled.section`
-  /* background-color: salmon; */
   height: 100vh;
 `;
 
 const MainAssets = styled.main`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 0.5cm;
+  justify-content: center;
+  height: 84vh;
+  gap: 15px;
+  > button {
+    background: transparent;
+    border: 1px solid ${({ theme }) => theme.borders.statusOrdersButton};
+    font-weight: 700;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    transition: background .5s
+  }
+  > button:hover {
+    background: ${({ theme }) => theme.backgrounds.footerButtonHover}
+  }
 `;
 
 export default {
