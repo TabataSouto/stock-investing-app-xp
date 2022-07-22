@@ -5,7 +5,6 @@ import {
 } from '../../redux/reducers/sellAsset';
 
 import Input from '../Input';
-import Style from './Style';
 
 function Sell() {
   const dispatch = useDispatch();
@@ -35,7 +34,7 @@ function Sell() {
   };
 
   return (
-    <Style.Div>
+    <div>
       <Input
         title="Vender"
         id="buy-asset"
@@ -47,7 +46,7 @@ function Sell() {
         disabled={toSell.buy > 0 && true}
         max={10000}
       />
-    </Style.Div>
+    </div>
   );
 }
 

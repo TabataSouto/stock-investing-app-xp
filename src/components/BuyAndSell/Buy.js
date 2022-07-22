@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addQtde, calcPurchase } from '../../redux/reducers/buyAsset';
 
 import Input from '../Input';
-import Style from './Style';
 
 function Buy() {
   const dispatch = useDispatch();
@@ -24,7 +23,7 @@ function Buy() {
   };
 
   return (
-    <Style.Div>
+    <div>
       <Input
         title="Comprar"
         id="buy-asset"
@@ -36,7 +35,7 @@ function Buy() {
         disabled={toBuy.sell > 0 && true}
         max={10000}
       />
-    </Style.Div>
+    </div>
   );
 }
 
