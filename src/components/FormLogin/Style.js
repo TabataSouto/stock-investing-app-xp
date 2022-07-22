@@ -8,13 +8,43 @@ const FormContainer = styled.section`
   height: 25em;
   padding: 1cm;
   width: 35em;
+  > img {
+    width: 16px;
+    position: absolute;
+    margin: 5cm 0.3cm;
+  }
+`;
+
+const DivForm = styled.div`
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5cm;
+  & p {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+`;
+
+const DivToken = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  height: 5cm;
+  justify-content: center;
+  & span {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 `;
 
 const Form = styled.form`
+  /* background: aquamarine; */
   display: flex;
   flex-direction: column;
-  height: inherit;
-  justify-content: space-evenly;
+  height: 20em;
+  justify-content: space-between;
   & input {
     border: none;
     border-bottom: 2px solid ${({ theme }) => theme.borders.login.bottom};
@@ -33,34 +63,13 @@ const Form = styled.form`
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 2px;
-    margin-top: 0.8cm;
+    /* margin-top: 0.8cm; */
     padding: 1.5em;
     transition: background 1s;
     text-transform: uppercase;
     &:enabled {
       background: ${({ theme }) => theme.buttons.login.buttonEnabled};
     }
-  }
-`;
-
-const DivForm = styled.div`
-  align-items: center;
-  display: flex;
-  gap: 10px;
-  margin-bottom: 1cm;
-  & p {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-`;
-
-const DivToken = styled.div`
-  font-size: 18px;
-
-  span {
-    font-weight: 700;
-    text-transform: uppercase;
   }
 `;
 
