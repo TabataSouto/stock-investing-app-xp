@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
+import Style from './Style';
 
 function Footer() {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ function Footer() {
   };
 
   return (
-    <footer>
+    <Style.FooterContainer>
       <Button
         name="deposit"
         disabled={false}
@@ -23,7 +24,7 @@ function Footer() {
         onClick={handleClick}
         title="Retirada"
       />
-    </footer>
+    </Style.FooterContainer>
   );
 }
 
