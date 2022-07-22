@@ -21,3 +21,7 @@ const store = configureStore({
 });
 
 export default store;
+
+export const reducers = {
+  login, assets, orders, account, buy, sell, negotiation,
+};
