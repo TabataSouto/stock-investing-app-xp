@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { render } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
+import { BrowserRouter } from 'react-router-dom';
 import GlobalStyles from '../../assets/styles/global';
 import defaultTheme from '../../assets/themes/default';
 
@@ -31,18 +32,39 @@ const createMockStore = (initialState) => (
 
 const renderWithRedux = (
   component,
-  initialState,
+  { initialState, store = createMockStore(initialState) } = {},
 ) => (
   {
     ...render(
-      <Provider store={createMockStore(initialState)}>
-        <ThemeProvider theme={defaultTheme}>
-          {component}
-          <GlobalStyles />
-        </ThemeProvider>
-      </Provider>,
+      <BrowserRouter>
+        <Provider store={store}>
+          <ThemeProvider theme={defaultTheme}>
+            {component}
+            <GlobalStyles />
+          </ThemeProvider>
+        </Provider>
+      </BrowserRouter>,
     ),
+    store,
   }
 );
 
 export default renderWithRedux;
+
+// const renderWithRedux = (
+//   component,
+//   initialState,
+// ) => (
+//   {
+//     ...render(
+//       <BrowserRouter>
+//         <Provider store={createMockStore(initialState)}>
+//           <ThemeProvider theme={defaultTheme}>
+//             {component}
+//             <GlobalStyles />
+//           </ThemeProvider>
+//         </Provider>
+//       </BrowserRouter>,
+//     ),
+//   }
+// );

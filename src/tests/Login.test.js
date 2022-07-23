@@ -9,7 +9,7 @@ const CORRECT_PASSWORD = '123456';
 const WRONG_EMAIL = 'exemplo.com';
 const WRONG_PASSWORD = '1234';
 
-describe('Verifique se na tela de Login', () => {
+describe('Verifique se na página de Login', () => {
   beforeEach(() => {
     renderWithRedux(<Login />);
   });
