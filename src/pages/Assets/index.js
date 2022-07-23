@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
 import CardAssets from '../../components/CardAssets';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
-
 import { fetchAssets } from '../../redux/reducers/assets';
+import loadingIcon from '../../images/loading.gif';
+import Style from './Style';
 
 function Assets() {
   const assets = useSelector((state) => state.assets.list);
@@ -17,34 +17,41 @@ function Assets() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchAssets());
+    setTimeout(() => {
+      dispatch(fetchAssets());
+    }, 1000);
   }, [ordersExecuted]);
 
   return (
-    <section>
+    <Style.AssetContainer>
       <Header />
-      <main>
+      <Style.MainAssets>
         <CardAssets
           title="Minhas Ações:"
           assets={ordersExecuted}
         />
-        <CardAssets
-          title="Disponíveis para investir:"
-          assets={
-            assets
-              .filter((asset) => ordersExecuted
-                .every((order) => asset.paper !== order.paper))
-            }
+        {
+          assets.length
+            ? (
+              <CardAssets
+                title="Disponíveis para investir:"
+                assets={
+              assets
+                .filter((asset) => ordersExecuted
+                  .every((order) => asset.paper !== order.paper))
+              }
+              />
+            ) : <img src={loadingIcon} alt="esperando página carregar" />
+        }
+        <Button
+          name="orders-status"
+          disabled={false}
+          onClick={() => navigate('/orders')}
+          title="Status ordens"
         />
-      </main>
+      </Style.MainAssets>
       <Footer />
-      <Button
-        name="orders-status"
-        disabled={false}
-        onClick={() => navigate('/orders')}
-        title="Status ordens"
-      />
-    </section>
+    </Style.AssetContainer>
   );
 }
 

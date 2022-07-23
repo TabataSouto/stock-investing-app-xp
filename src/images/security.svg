@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+    <!-- Generator: sketchtool 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>F3F07BB9-3B7B-4692-BA69-1702798BBE68</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Fluxo-Mobile---Novos-Clientes" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.-Mobile-HD---Login" transform="translate(-40.000000, -304.000000)">
+            <g id="Ambiente-Seguro" transform="translate(40.000000, 304.000000)">
+                <g id="Ícone-cadeado">
+                    <path d="M21.9804,16.134 C21.4032,17.5272 21.5352,19.4352 20.4852,20.4852 C19.4352,21.5352 17.5272,21.4032 16.134,21.9804 C14.79,22.5384 13.5456,24 12,24 C10.4544,24 9.21,22.5384 7.866,21.9804 C6.4728,21.4032 4.5648,21.5352 3.5148,20.4852 C2.4648,19.4352 2.5968,17.5272 2.0196,16.134 C1.4616,14.79 0,13.5456 0,12 C0,10.4544 1.4616,9.21 2.0196,7.866 C2.5968,6.4728 2.4648,4.5648 3.5148,3.5148 C4.5648,2.4648 6.4728,2.5968 7.866,2.0196 C9.21,1.4616 10.4544,0 12,0 C13.5456,0 14.79,1.4616 16.134,2.0196 C17.5272,2.5968 19.4352,2.4648 20.4852,3.5148 C21.5352,4.5648 21.4032,6.4728 21.9804,7.866 C22.5384,9.21 24,10.4544 24,12 C24,13.5456 22.5384,14.79 21.9804,16.134 Z" id="Page-1-Copy" fill="#18191A" transform="translate(12.000000, 12.000000) scale(-1, 1) translate(-12.000000, -12.000000) "/>
+                    <rect id="Rectangle" stroke="#EEEEEE" stroke-width="1.5" x="7.08333333" y="10.4166667" width="9.83333333" height="7.83333333" rx="2"/>
+                    <path d="M12,13 L12,14.3333333" id="Line-2" stroke="#EEEEEE" stroke-width="1.5" stroke-linecap="square"/>
+                    <path d="M9,9.66666667 L9,8 C9,6.34314575 10.3431458,5 12,5 L12,5 C13.6568542,5 15,6.34314575 15,8 L15,9.66666667" id="Path-2" stroke="#EEEEEE" stroke-width="1.5"/>
+                </g>
+            </g>
+        </g>
+    </g>
+<script xmlns="" type="text/javascript" src="chrome-extension://hejbmebodbijjdhflfknehhcgaklhano/../window/testing-library.js"/></svg>

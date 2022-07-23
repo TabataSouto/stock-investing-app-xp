@@ -14,7 +14,7 @@ const buyAssetSlice = createSlice({
       state.qtde = action.payload.qtde;
     },
     calcPurchase: (state, action) => {
-      state.calc = action.payload.qtde * action.payload.value;
+      state.calc = (action.payload.qtde * action.payload.value).toFixed(2);
     },
   },
 });

@@ -14,7 +14,7 @@ function Input({
 }) {
   return (
     <label htmlFor={id}>
-      { title }
+      <p>{ title }</p>
       <input
         id={id}
         type={type}
