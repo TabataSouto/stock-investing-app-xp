@@ -4,7 +4,7 @@ const themes = {
     placeholder: '#e5af00',
     tableTitle: '#545454',
     tableHover: '#ffc709',
-    balance: '#12d162',
+    balance: '#039203',
   },
   backgrounds: {
     header: '#222222',
@@ -25,6 +25,7 @@ const themes = {
     bottomInput: '#18191A',
     contourAssetsTable: '#b2b2b2',
     statusOrdersButton: '#ffc709',
+    contourBalance: '#eeeeee',
   },
 };
 

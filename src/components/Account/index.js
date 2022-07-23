@@ -29,24 +29,27 @@ function Account() {
 
   return (
     <Style.AccountContainer>
+      <p>Meu extrato</p>
       <div>
         <p>
           Saldo em conta:
           {' '}
           <span>
-            { account.balance < 0 ? 0.00 : (account.balance).toFixed(2) }
+            { account.balance < 0 ? (0).toFixed(2) : (account.balance).toFixed(2) }
           </span>
         </p>
         <ul>
           <li>
-            lançamentos futuros:
+            Lançamentos futuros:
             {' '}
-            <span>{account.leveradedValue}</span>
+            <span>{account.leveradedValue < 0 && (account.leveradedValue).toFixed(2)}</span>
           </li>
           <li>
-            garantias:
+            Garantias:
             {' '}
-            <span>{account.rentValue}</span>
+            {/* ARRUMA ESSA PARTE DEPOIS DE MUDAR A LÓGICA PARA QUE
+            RETORNE UM VALOR NEGATIVO */}
+            <span>{account.rentValue > 0 && (account.rentValue).toFixed(2)}</span>
           </li>
         </ul>
       </div>
