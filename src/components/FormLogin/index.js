@@ -50,7 +50,7 @@ function Form() {
           type="password"
           name="password"
           value={login.password}
-          placeholder="password"
+          placeholder="Senha"
           onChange={handleChange}
           disabled={false}
           max={100}

@@ -40,7 +40,6 @@ const DivToken = styled.div`
 `;
 
 const Form = styled.form`
-  /* background: aquamarine; */
   display: flex;
   flex-direction: column;
   height: 20em;
@@ -53,9 +52,6 @@ const Form = styled.form`
     padding: 12px;
     text-align: center;
     width: 100%;
-    &::placeholder {
-      color: ${({ theme }) => theme.colors.placeholder}
-    }
   }
   & button {
     background: ${({ theme }) => theme.backgrounds.disabledButton};
@@ -63,7 +59,6 @@ const Form = styled.form`
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 2px;
-    /* margin-top: 0.8cm; */
     padding: 1.5em;
     transition: background 1s;
     text-transform: uppercase;
