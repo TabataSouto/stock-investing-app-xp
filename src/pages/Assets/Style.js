@@ -8,9 +8,9 @@ const MainAssets = styled.main`
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 84vh;
-  gap: 15px;
+  /* height: 84vh; */
+  margin: 0.4cm;
+  gap: 20px;
   > button {
     background: transparent;
     border: 1px solid ${({ theme }) => theme.borders.statusOrdersButton};
