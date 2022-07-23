@@ -49,7 +49,6 @@ const BuyAndSellButtons = styled.div`
     width: 15em;
     text-transform: uppercase;
     text-align: center;
-    cursor: default;
   }
   & > div {
     align-items: center;

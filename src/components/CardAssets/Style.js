@@ -17,7 +17,6 @@ const TableCardAssets = styled.table`
   padding: 5px;
   width: 100%;
   text-align: center;
-  cursor: default;
 `;
 
 const TheadCardAssets = styled.thead`

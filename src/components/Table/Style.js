@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-const TableTicket = styled.table`
+const OrdersTable = styled.table`
+  border: solid 1px ${({ theme }) => theme.borders.contourAssetsTable};
   border-collapse: collapse;
   width: 100%;
-  text-align: center;
 `;
-
-const TheadTicket = styled.thead`
+const OrdersThead = styled.thead`
   & th {
     padding: 5px 0;
     font-size: 13px;
@@ -14,23 +13,18 @@ const TheadTicket = styled.thead`
     text-transform: uppercase;
   }
 `;
-
-const TbodyTicket = styled.tbody`
+const OrdersTbody = styled.tbody`
+  text-align: center;
   & td {
-    font-weight: 700;
     padding: 4px;
   }
   & tr td {
     background: ${({ theme }) => theme.backgrounds.assetsInTable};
   }
-  & tr td:nth-child(1) {
-    color: black;
-    background: ${({ theme }) => theme.colors.tableHover};
-  }
 `;
 
 export default {
-  TableTicket,
-  TheadTicket,
-  TbodyTicket,
+  OrdersTable,
+  OrdersThead,
+  OrdersTbody,
 };

@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import Button from '../Button';
+import Style from './Style';
 
 function Table({ orders }) {
   const navigate = useNavigate();
 
   return (
     <section>
-      <table>
-        <thead>
+      <Style.OrdersTable>
+        <Style.OrdersThead>
           <tr>
             <th>Lado</th>
             <th>Papel</th>
@@ -19,8 +20,8 @@ function Table({ orders }) {
             <th>Status</th>
             <th>Data/Hora</th>
           </tr>
-        </thead>
-        <tbody>
+        </Style.OrdersThead>
+        <Style.OrdersTbody>
           { orders.map(({
             paper, isBuy, direction, amount, quantity, status, dataAndHour,
           }) => (
@@ -34,8 +35,8 @@ function Table({ orders }) {
               <td>{dataAndHour}</td>
             </tr>
           ))}
-        </tbody>
-      </table>
+        </Style.OrdersTbody>
+      </Style.OrdersTable>
       <Button
         name="go-back"
         disabled={false}
