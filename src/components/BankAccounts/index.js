@@ -110,7 +110,7 @@ function BankAccounts() {
         )
         }
       </Style.BankAccountsOptions>
-      <div>
+      <Style.BankAccountsInput>
         <Input
           title=""
           id="value-trans"
@@ -122,7 +122,7 @@ function BankAccounts() {
           disabled={false}
           max={10000}
         />
-      </div>
+      </Style.BankAccountsInput>
     </Style.BankAccountsContainer>
   );
 }

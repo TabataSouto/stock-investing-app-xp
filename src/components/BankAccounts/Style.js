@@ -5,12 +5,13 @@ const BankAccountsContainer = styled.section`
   flex-direction: column;
   gap: 10px;
   padding: 0.8cm 0;
+  width: 30em;
 `;
 
 const BankAccountsButtons = styled.div`
   display: flex;
-  gap: 1cm;
   justify-content: center;
+  gap: 1cm;
   & div {
     display: flex;
     gap: 5px;
@@ -56,7 +57,13 @@ const BankAccountsOptions = styled.div`
 `;
 
 const BankAccountsInput = styled.div`
-
+  & label input {
+    border: 1px solid ${({ theme }) => theme.borders.statusOrdersButton};
+    padding: 0.4cm 2cm;
+    text-align: center;
+    outline: none;
+    width: 100%;
+  }
 `;
 
 export default {
