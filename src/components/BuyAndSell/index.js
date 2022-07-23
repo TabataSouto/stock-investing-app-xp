@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import orderType from '../../helpers/orderType';
-import { decrementBalance, incrementBalance, incrementBalanceRent } from '../../redux/reducers/account';
+import {
+  // decrementBalance,
+  // incrementBalance,
+  incrementBalanceRent,
+} from '../../redux/reducers/account';
 import { addExecutedOrder } from '../../redux/reducers/orders';
 import currentDate from '../../helpers/currentDate';
 import Buy from './Buy';
@@ -10,13 +14,15 @@ import Sell from './Sell';
 import Input from '../Input';
 import Style from './Style';
 
+import businessRules from '../../helpers/businessRules';
+
 function BuyAndSell() {
   const [electronicPassword, setElectronicPassword] = useState({ pass: '', confirm: false });
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const {
-    asset, buy, sell, account,
+    asset, buy, sell, account, orders,
   } = useSelector((state) => ({
     asset: state.negotiation.asset[0],
     account: state.account,
@@ -29,8 +35,8 @@ function BuyAndSell() {
     const order = {
       paper: asset.paper,
       direction: document.getElementById('l').innerText,
-      amount: buy.qtde === 0 ? sell.calc : buy.calc,
-      quantity: buy.qtde === 0 ? +sell.qtde : +buy.qtde,
+      amount: businessRules.amountBTC(buy, sell),
+      quantity: businessRules.qtdeBTC(buy, sell),
       isLeveraged: (account.balance - buy.calc) < 0,
       isRent: sell.qtde > 0 && sell.isRent,
       isBuy: buy.qtde > 0,
@@ -39,17 +45,19 @@ function BuyAndSell() {
       dataAndHour: currentDate(),
     };
 
+    const item = orders.find((o) => o.paper === order.paper);
+    console.log(item);
     if (name === 'confirm') {
       dispatch(addExecutedOrder(order));
-      if (buy.qtde > 0) {
-        dispatch(decrementBalance(order));
-      }
-      if (sell.qtde > 0 && sell.isRent) {
+      if (order.quantity < 0 && order.isRent === true) {
         dispatch(incrementBalanceRent(order));
       }
-      if (sell.qtde > 0) {
-        dispatch(incrementBalance(order));
-      }
+      // if (buy.qtde > 0) {
+      //   dispatch(decrementBalance(order));
+      // }
+      // if (sell.qtde > 0) {
+      //   dispatch(incrementBalance(order));
+      // }
     } else {
       navigate('/assets');
     }

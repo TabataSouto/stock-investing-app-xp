@@ -4,6 +4,7 @@ const initialState = {
   qtde: 0,
   calc: 0,
   isLeveraged: false,
+  isRent: false,
 };
 
 const buyAssetSlice = createSlice({
@@ -16,9 +17,12 @@ const buyAssetSlice = createSlice({
     calcPurchase: (state, action) => {
       state.calc = (action.payload.qtde * action.payload.value).toFixed(2);
     },
+    isRentBuy: (state, action) => {
+      state.isRent = action.payload;
+    },
   },
 });
 
-export const { addQtde, calcPurchase } = buyAssetSlice.actions;
+export const { addQtde, calcPurchase, isRentBuy } = buyAssetSlice.actions;
 
 export default buyAssetSlice.reducer;

@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addQtde, calcPurchase } from '../../redux/reducers/buyAsset';
+import { addQtde, calcPurchase, isRentBuy } from '../../redux/reducers/buyAsset';
 import Input from '../Input';
 
 function Buy() {
   const dispatch = useDispatch();
   const toBuy = useSelector((state) => ({
-    asset: state.negotiation.asset[0].amount,
+    asset: state.negotiation.asset[0],
     buy: state.buy.calc,
     sell: state.sell.qtde,
+    orders: state.orders,
   }));
-  const [orderQtde, setOrderQtde] = useState({ qtde: 0, value: toBuy.asset });
+  const [orderQtde, setOrderQtde] = useState({ qtde: 0, value: toBuy.asset.amount });
 
   useEffect(() => {
-    dispatch(addQtde(orderQtde));
-    dispatch(calcPurchase(orderQtde));
+    const verifyIsRent = toBuy
+      .orders.find((o) => o.paper === toBuy.asset.paper && o.isRent === true);
+
+    if (verifyIsRent !== undefined) {
+      dispatch(isRentBuy(true));
+      dispatch(addQtde(orderQtde));
+      dispatch(calcPurchase(orderQtde));
+    }
   }, [orderQtde, toBuy]);
 
   const handleChange = ({ target: { value } }) => {

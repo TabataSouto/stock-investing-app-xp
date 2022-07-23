@@ -17,38 +17,38 @@ const accoutSlice = createSlice({
   reducers: {
     incrementBalanceRent: (state, { payload }) => {
       state.rentValue += payload.amount;
-      state.balance += payload.amount;
+      state.balance += payload.amount * -1;
     },
-    incrementBalance: (state, { payload }) => {
-      state.balance += payload.amount;
-    },
-    decrementBalance: (state, { payload }) => {
-      state.balance -= payload.amount;
-      if (state.balance < 0) {
-        state.leveradedValue += state.balance;
-      }
-    },
-    isLeveraged: (state, action) => {
-      state.isLeveraged = action.payload >= state.balance;
-    },
-    selectedBank: (state, action) => {
-      state.bank = action.payload;
-    },
-    operationType: (state, action) => {
-      state.operationType = action.payload;
-    },
-    valueTransition: (state, action) => {
-      state.transitionValue = +action.payload;
-    },
-    deposit: (state, action) => {
-      state.balance += action.payload;
-    },
-    withdrawal: (state, action) => {
-      state.balance -= action.payload;
-    },
-    notAllowed: (state, action) => {
-      state.notAllowed = action.payload;
-    },
+    // incrementBalance: (state, { payload }) => {
+    //   state.balance += payload.amount;
+    // },
+    // decrementBalance: (state, { payload }) => {
+    //   state.balance -= payload.amount;
+    //   // if (state.balance < 0) {
+    //   //   state.leveradedValue += state.balance;
+    //   // }
+    // },
+    // isLeveraged: (state, action) => {
+    //   state.isLeveraged = action.payload >= state.balance;
+    // },
+    // selectedBank: (state, action) => {
+    //   state.bank = action.payload;
+    // },
+    // operationType: (state, action) => {
+    //   state.operationType = action.payload;
+    // },
+    // valueTransition: (state, action) => {
+    //   state.transitionValue = +action.payload;
+    // },
+    // deposit: (state, action) => {
+    //   state.balance += action.payload;
+    // },
+    // withdrawal: (state, action) => {
+    //   state.balance -= action.payload;
+    // },
+    // notAllowed: (state, action) => {
+    //   state.notAllowed = action.payload;
+    // },
   },
 });
 
