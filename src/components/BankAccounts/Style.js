@@ -5,7 +5,6 @@ const BankAccountsContainer = styled.section`
   flex-direction: column;
   gap: 10px;
   padding: 0.8cm 0;
-  width: 30em;
 `;
 
 const BankAccountsButtons = styled.div`
@@ -15,8 +14,8 @@ const BankAccountsButtons = styled.div`
   & div {
     display: flex;
     gap: 5px;
-    justify-content: flex-end;
-    width: 9.5em;
+    justify-content: center;
+    width: 11em;
     img {
       width: 15px;
     }

@@ -56,22 +56,22 @@ const BuyAndSellButtons = styled.div`
     justify-content: center;
     padding: 1cm 0;
     gap: 20px;
-  & button { 
-    background: ${({ theme }) => theme.backgrounds.footerButton};
-    border: none;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 2px;
-    padding: 0.4cm 1cm;
-    transition: background 1s;
-    text-transform: uppercase;
-  }
-  & button:disabled {
-    background: ${({ theme }) => theme.backgrounds.disabledButton};
-  }
-  & button:hover {
-    background: ${({ theme }) => theme.backgrounds.footerButtonHover}
-  }
+    & button { 
+      background: ${({ theme }) => theme.backgrounds.footerButton};
+      border: none;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      padding: 0.4cm 1cm;
+      transition: background 1s;
+      text-transform: uppercase;
+      }
+    & button:disabled {
+      background: ${({ theme }) => theme.backgrounds.disabledButton};
+    }
+    & button:hover {
+      background: ${({ theme }) => theme.backgrounds.footerButtonHover}
+    }
   }
 `;
 
