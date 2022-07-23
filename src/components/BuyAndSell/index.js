@@ -22,7 +22,7 @@ function BuyAndSell() {
     account: state.account,
     buy: state.buy,
     sell: state.sell,
-    orders: state.orders,
+    orders: state.orders.executedOrders,
   }));
 
   const handleClick = ({ target: { name } }) => {
