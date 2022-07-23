@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { deposit, notAllowed } from '../../redux/reducers/account';
 import BankAccounts from '../BankAccounts';
 import Button from '../Button';
+import Style from './Style';
 
 function Account() {
   const dispatch = useDispatch();
@@ -27,13 +28,13 @@ function Account() {
   };
 
   return (
-    <section>
+    <Style.AccountContainer>
       <div>
         <p>
           Saldo em conta:
           {' '}
           <span>
-            { account.balance < 0 ? 0.00 : account.balance }
+            { account.balance < 0 ? 0.00 : (account.balance).toFixed(2) }
           </span>
         </p>
         <ul>
@@ -65,7 +66,7 @@ function Account() {
           title="Confirmar"
         />
       </form>
-    </section>
+    </Style.AccountContainer>
   );
 }
 

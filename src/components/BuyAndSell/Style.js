@@ -80,6 +80,7 @@ const BuyAndSellInput = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.8cm 0;
+  font-weight: 700;
   & label:nth-child(1) p {
     background: ${({ theme }) => theme.backgrounds.buyButtonHover};
   }
@@ -92,8 +93,9 @@ const BuyAndSellInput = styled.div`
     gap: 5px;
     & p {
       border-radius: 2px;
-      padding: 10px;
+      color: white;
       margin: 5px 0;
+      padding: 10px;
       text-align: center;
       width: 10em;
     }

@@ -4,6 +4,7 @@ const themes = {
     placeholder: '#e5af00',
     tableTitle: '#545454',
     tableHover: '#ffc709',
+    balance: '#12d162',
   },
   backgrounds: {
     header: '#222222',
@@ -14,8 +15,8 @@ const themes = {
     assetsTitle: '#b2b2b2',
     tableTitle: '#ddd',
     assetsInTable: '#eeeeee',
-    buyButtonHover: '#3c99fc',
-    sellButtonHover: '#12d162',
+    buyButtonHover: '#0d79e5',
+    sellButtonHover: '#039203',
     buyButton: '#91a9c4',
     sellButton: '#95c4ae',
   },

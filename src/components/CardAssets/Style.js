@@ -51,12 +51,14 @@ const TbodyCardAssets = styled.tbody`
   }
   & tr:hover td:nth-child(4) {
     & button:nth-child(1) {
-      color: black;
       background: ${({ theme }) => theme.backgrounds.buyButtonHover};
+      color: white;
+      font-weight: 700;
     }
     & button:nth-child(2) {
-      color: black;
       background: ${({ theme }) => theme.backgrounds.sellButtonHover};
+      color: white;
+      font-weight: 700;
     }
   }
   & tr:hover td {
