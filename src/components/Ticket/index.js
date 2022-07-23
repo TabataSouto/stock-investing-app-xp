@@ -1,22 +1,27 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Style from './Style';
 
 function Ticket() {
   const [asset] = useSelector((state) => state.negotiation.asset);
 
   return (
-    <section>
-      <div>
-        <h4>Ação</h4>
-        <h4>Qtde</h4>
-        <h4>Valor (R$)</h4>
-      </div>
-      <div>
-        <p>{ asset.paper }</p>
-        <p>{ asset.quantity }</p>
-        <p>{ asset.amount }</p>
-      </div>
-    </section>
+    <Style.TableTicket>
+      <Style.TheadTicket>
+        <tr>
+          <th>Ação</th>
+          <th>Quantidade</th>
+          <th>Valor (R$)</th>
+        </tr>
+      </Style.TheadTicket>
+      <Style.TbodyTicket>
+        <tr>
+          <td>{ asset.paper }</td>
+          <td>{ asset.quantity }</td>
+          <td>{ asset.amount }</td>
+        </tr>
+      </Style.TbodyTicket>
+    </Style.TableTicket>
   );
 }
 
