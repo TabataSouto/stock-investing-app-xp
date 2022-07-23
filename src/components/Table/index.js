@@ -24,7 +24,7 @@ function Table({ orders }) {
             <td>{isBuy ? 'Compra' : 'Venda'}</td>
             <td>{paper}</td>
             <td>{direction}</td>
-            <td>{amount}</td>
+            <td>{(amount)}</td>
             <td>{quantity}</td>
             <td>{status}</td>
             <td>{dataAndHour}</td>

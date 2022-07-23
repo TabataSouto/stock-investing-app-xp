@@ -12,6 +12,7 @@ const AccountContainer = styled.section`
       padding: 1em;
       span {
         color: ${({ theme }) => theme.colors.balance};
+        letter-spacing: 1px;
         font-size: 18px;
         font-weight: 700;
       }

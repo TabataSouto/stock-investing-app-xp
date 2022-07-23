@@ -30,7 +30,7 @@ function BuyAndSell() {
       paper: asset.paper,
       direction: document.getElementById('l').innerText,
       amount: buy.qtde === 0 ? sell.calc : buy.calc,
-      quantity: buy.qtde === 0 ? Number(sell.qtde) : Number(buy.qtde),
+      quantity: buy.qtde === 0 ? +sell.qtde : +buy.qtde,
       isLeveraged: (account.balance - buy.calc) < 0,
       isRent: sell.qtde > 0 && sell.isRent,
       isBuy: buy.qtde > 0,
