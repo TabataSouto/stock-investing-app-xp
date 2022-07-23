@@ -1,19 +1,24 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
 import React from 'react';
 import { Provider } from 'react-redux';
-import reducer from '../../redux/store';
+import { ThemeProvider } from 'styled-components';
+import { render } from '@testing-library/react';
+import GlobalStyles from '../../assets/styles/global';
+import defaultTheme from '../../assets/themes/default';
+import store from '../../redux/store';
 
-const navigate = useNavigate();
-
-export const makeStore = () => configureStore({ reducer });
-
-const wrapComponent = (Component, store = null) => (
-  <Provider store={store || makeStore()}>
-    <BrowserRouter history={navigate}>
-      <Component />
-    </BrowserRouter>
-  </Provider>
+const renderWithRedux = (
+  component,
+) => (
+  {
+    ...render(
+      <Provider store={store}>
+        <ThemeProvider theme={defaultTheme}>
+          {component}
+          <GlobalStyles />
+        </ThemeProvider>
+      </Provider>,
+    ),
+  }
 );
 
-export default wrapComponent;
+export default renderWithRedux;
