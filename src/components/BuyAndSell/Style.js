@@ -40,7 +40,6 @@ const BuyAndSellButtons = styled.div`
     outline: none;
   }
   & p:nth-child(2) {
-    /* background: ${({ theme }) => theme.backgrounds.footerButton}; */
     background: ${({ theme }) => theme.backgrounds.disabledButton};
     font-size: 12px;
     font-weight: 700;

@@ -35,7 +35,7 @@ function BuyAndSell() {
       isRent: sell.qtde > 0 && sell.isRent,
       isBuy: buy.qtde > 0,
       isSell: sell.qtde > 0 || sell.qtde < 0,
-      status: 'executada',
+      status: 'Executada',
       dataAndHour: currentDate(),
     };
 
