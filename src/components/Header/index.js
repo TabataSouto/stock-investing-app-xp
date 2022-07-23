@@ -1,28 +1,24 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-import storage from '../../helpers/storage';
-import { userLogin } from '../../redux/reducers/loginSlice';
+import logo from '../../images/logo-xpi.svg';
+// import storage from '../../helpers/storage';
+// import { userLogin } from '../../redux/reducers/loginSlice';
+
+import Style from './Style';
 
 function Header() {
-  const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.login.email);
 
-  useEffect(() => {
-    const user = storage.getUser();
-    dispatch(userLogin(user));
-  });
-
   return (
-    <header>
+    <Style.HeaderContainer>
       <div>
-        <p>
-          {' '}
-          { `Usuário: ${loggedUser}`}
-          {' '}
-        </p>
+        <img src={logo} alt="marca logo da empresa" />
       </div>
-    </header>
+      <div>
+        { loggedUser && <p>{loggedUser}</p>}
+      </div>
+    </Style.HeaderContainer>
   );
 }
 
