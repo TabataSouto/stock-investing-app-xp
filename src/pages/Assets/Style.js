@@ -8,7 +8,6 @@ const MainAssets = styled.main`
   align-items: center;
   display: flex;
   flex-direction: column;
-  /* height: 84vh; */
   margin: 0.4cm;
   gap: 20px;
   > button {

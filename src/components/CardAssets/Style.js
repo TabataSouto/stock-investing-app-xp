@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const TableContainer = styled.section`
   font-size: 15px;
   border: solid 1px ${({ theme }) => theme.borders.contourAssetsTable};
-  width: 50%;
+  width: 40em;
   & h3 {
     color: white;
     background: black;

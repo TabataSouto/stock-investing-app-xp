@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   addQtde, calcPurchase, saleStillWithRent, saleWithRent,
 } from '../../redux/reducers/sellAsset';
-
 import Input from '../Input';
 
 function Sell() {
@@ -34,19 +33,17 @@ function Sell() {
   };
 
   return (
-    <div>
-      <Input
-        title="Vender"
-        id="buy-asset"
-        type="number"
-        name="sell"
-        value={orderQtde.qtde}
-        placeholder="Informe a quantidade"
-        onChange={handleChange}
-        disabled={toSell.buy > 0 && true}
-        max={10000}
-      />
-    </div>
+    <Input
+      title="Vender"
+      id="buy-asset"
+      type="number"
+      name="sell"
+      value={orderQtde.qtde}
+      placeholder="Informe a quantidade"
+      onChange={handleChange}
+      disabled={toSell.buy > 0 && true}
+      max={10000}
+    />
   );
 }
 

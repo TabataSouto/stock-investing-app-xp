@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addQtde, calcPurchase } from '../../redux/reducers/buyAsset';
-
 import Input from '../Input';
 
 function Buy() {
@@ -23,19 +22,17 @@ function Buy() {
   };
 
   return (
-    <div>
-      <Input
-        title="Comprar"
-        id="buy-asset"
-        type="number"
-        name="buy"
-        value={orderQtde.qtde}
-        placeholder="Informe a quantidade"
-        onChange={handleChange}
-        disabled={toBuy.sell > 0 && true}
-        max={10000}
-      />
-    </div>
+    <Input
+      title="Comprar"
+      id="buy-asset"
+      type="number"
+      name="buy"
+      value={orderQtde.qtde}
+      placeholder="Informe a quantidade"
+      onChange={handleChange}
+      disabled={toBuy.sell > 0 && true}
+      max={10000}
+    />
   );
 }
 
