@@ -4,6 +4,7 @@ const TableTicket = styled.table`
   border-collapse: collapse;
   width: 100%;
   text-align: center;
+  cursor: default;
 `;
 
 const TheadTicket = styled.thead`

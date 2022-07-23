@@ -18,7 +18,7 @@ const OrdersTbody = styled.tbody`
   & td {
     padding: 4px;
   }
-  & tr td {
+  & tr:nth-child(2n+1) {
     background: ${({ theme }) => theme.backgrounds.assetsInTable};
   }
 `;
