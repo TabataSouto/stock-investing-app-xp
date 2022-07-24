@@ -35,7 +35,7 @@ function CardAssets({ title, assets }) {
             <tr key={paper}>
               <td>{paper}</td>
               <td>{quantity}</td>
-              <td>{amount}</td>
+              <td>{(amount).toFixed(2)}</td>
               <td>
                 <Button
                   name={paper}

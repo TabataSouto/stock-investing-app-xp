@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   balance: 50.0,
   isLeveraged: false,
-  leveradedValue: 0.00,
-  rentValue: 0.00,
+  leveradedValue: 0,
+  rentValue: 0,
   bank: '',
   operationType: '',
   transitionValue: 0,
@@ -16,8 +16,8 @@ const accoutSlice = createSlice({
   initialState,
   reducers: {
     incrementBalanceRent: (state, { payload }) => {
-      state.rentValue += payload.amount;
-      state.balance += payload.amount;
+      state.rentValue += payload;
+      // state.balance += payload.amount;
     },
     incrementBalance: (state, { payload }) => {
       state.balance += payload.amount;
@@ -49,12 +49,16 @@ const accoutSlice = createSlice({
     notAllowed: (state, action) => {
       state.notAllowed = action.payload;
     },
+    updateLeveradedValue: (state, action) => {
+      state.leveradedValue = action.payload;
+    },
   },
 });
 
 export const {
   incrementBalanceRent, incrementBalance, decrementBalance, isLeveraged,
-  selectedBank, operationType, valueTransition, deposit, withdrawal, notAllowed,
+  selectedBank, operationType, valueTransition, deposit, withdrawal,
+  notAllowed, updateLeveradedValue,
 } = accoutSlice.actions;
 
 export default accoutSlice.reducer;

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import orderType from '../../helpers/orderType';
-import { decrementBalance, incrementBalance, incrementBalanceRent } from '../../redux/reducers/account';
-import { addExecutedOrder } from '../../redux/reducers/orders';
+import {
+  decrementBalance, incrementBalance, incrementBalanceRent,
+} from '../../redux/reducers/account';
+import { addExecutedOrder, historicOrders } from '../../redux/reducers/orders';
 import currentDate from '../../helpers/currentDate';
 import Buy from './Buy';
 import Sell from './Sell';
@@ -22,7 +24,6 @@ function BuyAndSell() {
     account: state.account,
     buy: state.buy,
     sell: state.sell,
-    orders: state.orders,
   }));
 
   const handleClick = ({ target: { name } }) => {
@@ -40,12 +41,13 @@ function BuyAndSell() {
     };
 
     if (name === 'confirm') {
+      dispatch(historicOrders(order));
       dispatch(addExecutedOrder(order));
       if (buy.qtde > 0) {
         dispatch(decrementBalance(order));
       }
-      if (sell.qtde > 0 && sell.isRent) {
-        dispatch(incrementBalanceRent(order));
+      if (order.quantity < 0) {
+        dispatch(incrementBalanceRent(order.amount));
       }
       if (sell.qtde > 0) {
         dispatch(incrementBalance(order));
@@ -78,7 +80,7 @@ function BuyAndSell() {
         <p>
           Financeiro da ordem:
           {' '}
-          <span>{buy.calc > 0 ? buy.calc : sell.calc}</span>
+          <span>{buy.calc > 0 ? (buy.calc).toFixed(2) : (sell.calc).toFixed(2)}</span>
         </p>
       </Style.FinancialOrderValue>
       <Style.FinancialOrderMain>
@@ -98,14 +100,20 @@ function BuyAndSell() {
                 { (account.balance - buy.calc) < 0 && buy.qtde > 0 ? 'sim' : 'não' }
               </span>
             </li>
-            { sell.qtde > 0 && sell.isRent
-              && (
+            { !sell.inWallet && (
               <li>
-                Tomar aluguel (BTC):
-                {' '}
-                <span>sim</span>
+                BTC indisponível para esse ativo!
               </li>
-              ) }
+            ) }
+            {
+              sell.isBTC && (
+                <li>
+                  Tomar aluguel (BTC):
+                  {' '}
+                  <span>sim</span>
+                </li>
+              )
+            }
           </ul>
         </div>
         <form>
