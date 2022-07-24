@@ -93,6 +93,16 @@ npm test
 
 Concluído
 
+# Deploy
+
+O Deploy deste projeto foi realizado no Vercel https://stock-trader-mu.vercel.app/ 
+
+# Aprendizados:
+
+Fiz uma pesquisa de campo sobre as funciondalidades de uma página para negociar ações, considerando as regras básicas de negócio e caracteristicas do mercado brasileiro e utilizando conhecimentos pessoais.
+
+Houve dificuldade para realização do deploy do back-end (API) de forma que fosse possível a correta chamada da rota criada na aplicação front end (Dersafio superado). As lógicas da lançamentos futuros e garantias foram complexas, o que gerou dificuldade no entendimento sobre decremento e incremento no saldo em conta, com suas implicações transacionais
+
 # Colaborador
 
 Tabata Caroline Souto
