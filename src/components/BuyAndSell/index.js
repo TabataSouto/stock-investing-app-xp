@@ -22,7 +22,6 @@ function BuyAndSell() {
     account: state.account,
     buy: state.buy,
     sell: state.sell,
-    orders: state.orders.executedOrders,
   }));
 
   const handleClick = ({ target: { name } }) => {
@@ -103,6 +102,15 @@ function BuyAndSell() {
                 BTC indisponível para esse ativo!
               </li>
             ) }
+            {
+              sell.isBTC && (
+                <li>
+                  Tomar aluguel (BTC):
+                  {' '}
+                  <span>sim</span>
+                </li>
+              )
+            }
           </ul>
         </div>
         <form>

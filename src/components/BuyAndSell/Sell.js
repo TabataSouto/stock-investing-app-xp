@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  addQtde, calcPurchase, saleInWallet,
+  addQtde, calcPurchase, saleInWallet, sellWithcBTC,
 } from '../../redux/reducers/sellAsset';
 import Input from '../Input';
 
@@ -18,8 +18,8 @@ function Sell() {
   useEffect(() => {
     const assetInWallet = toSell.orders
       .some((order) => order.paper === toSell.asset.paper);
-    console.log(assetInWallet);
-
+    const isBTC = toSell.orders.some((o) => o.quantity < orderQtde.qtde);
+    dispatch(sellWithcBTC(isBTC));
     dispatch(addQtde(orderQtde));
     dispatch(calcPurchase(orderQtde));
     dispatch(saleInWallet(assetInWallet));

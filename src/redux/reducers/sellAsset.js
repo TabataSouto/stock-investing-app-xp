@@ -4,6 +4,7 @@ const initialState = {
   qtde: 0,
   calc: 0,
   inWallet: false,
+  isBTC: false,
 };
 
 const sellAssetSlice = createSlice({
@@ -19,11 +20,14 @@ const sellAssetSlice = createSlice({
     saleInWallet: (state, action) => {
       state.inWallet = action.payload;
     },
+    sellWithcBTC: (state, action) => {
+      state.isBTC = action.payload;
+    },
   },
 });
 
 export const {
-  addQtde, calcPurchase, saleInWallet,
+  addQtde, calcPurchase, saleInWallet, sellWithcBTC,
 } = sellAssetSlice.actions;
 
 export default sellAssetSlice.reducer;
