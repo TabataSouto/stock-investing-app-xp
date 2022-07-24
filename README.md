@@ -7,7 +7,7 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
 # 💡 Implementações extras
 
 #### API (Database)
-- Criação do back-end com as ações utilização para realização da aplicação.
+- Criação do back-end com as ações utilizadas para desenvolvimento da aplicação.
 
 #### Página de Login
 - Token de validação para acesso
