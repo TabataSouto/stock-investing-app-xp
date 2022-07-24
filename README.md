@@ -10,22 +10,22 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
 - Criação do back-end com as ações utilizadas para desenvolvimento da aplicação.
 
 #### Página de Login
-- Token de validação para acesso
+- Token de validação de acesso.
 
 #### Pagina de negociação
-- Operações alavancadas
-- Operações vendidas com "virada de mão" (inversão de posição)
-- Aluguel de ações
-- Negociação por lote (Padrão, Fracionário)
-- Assinatura eletronica para envio de ordens
+- Operações alavancadas.
+- Operações vendidas com "virada de mão" (inversão de posição).
+- Aluguel de ações.
+- Negociação por lote (Padrão, Fracionário).
+- Assinatura eletrônica para envio de ordens.
 
 #### Pagina de consulta histórico de ordens
-- Histórico de ordens executadas com caracteristicas fundamentais (preço médio, lado, status, data e hora)
+- Histórico de ordens executadas com caracteristicas fundamentais (preço médio, lado, status, data e hora).
 
 #### Pagina controle financeiro
-- Lançamentos futuros
-- Garantias requeridas
-- Seleção de conta bancária para retirada financeira
+- Lançamentos futuros.
+- Garantias requeridas.
+- Seleção de conta bancária para retirada financeira.
 
 # 📋 Regras de negocio:
 
