@@ -5,7 +5,7 @@ const currentDate = () => {
   const year = date.getFullYear();
   const hour = date.toLocaleTimeString('pt', { hour24: true });
 
-  return `${day}/${month}/${year} - ${hour}`;
+  return `${day}/${month}/${year} ${hour}`;
 };
 
 export default currentDate;

@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
+import storage from '../../helpers/storage';
 import logo from '../../images/logo-xpi.svg';
-// import storage from '../../helpers/storage';
-// import { userLogin } from '../../redux/reducers/loginSlice';
-
 import Style from './Style';
 
 function Header() {
   const loggedUser = useSelector((state) => state.login.email);
+  const [userStorage, setUserStorage] = useState('');
+
+  useEffect(() => {
+    const getStorage = storage.getUser();
+    setUserStorage(getStorage.email);
+  }, [userStorage]);
 
   return (
     <Style.HeaderContainer>
@@ -16,7 +19,9 @@ function Header() {
         <img src={logo} alt="marca logo da empresa" />
       </div>
       <div>
-        { loggedUser && <p>{loggedUser}</p>}
+        { !loggedUser
+          ? <p>{`Último acesso: ${userStorage}`}</p>
+          : <p>{loggedUser}</p> }
       </div>
     </Style.HeaderContainer>
   );

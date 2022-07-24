@@ -7,6 +7,7 @@ import { userLogin } from '../../redux/reducers/loginSlice';
 import storage from '../../helpers/storage';
 import Style from './Style';
 import security from '../../images/security.svg';
+import currentDate from '../../helpers/currentDate';
 
 function Form() {
   const [login, setLogin] = useState({ email: '', password: '' });
@@ -23,7 +24,7 @@ function Form() {
 
   const handleClick = () => {
     dispatch(userLogin(login));
-    storage.setUser(login);
+    storage.setUser({ email: login.email, date: currentDate() });
   };
 
   return (
