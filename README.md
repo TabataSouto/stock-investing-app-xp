@@ -27,7 +27,7 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
 - Garantias requeridas.
 - Seleção de conta bancária para retirada financeira.
 
-# 📋 Regras de negocio:
+# 📋 Regras de negócio:
 
 ##### Login
 - O E-mail deve ser informado em formato válido.
@@ -116,9 +116,9 @@ Concluído
 O Deploy deste projeto foi realizado no Vercel https://stock-trader-mu.vercel.app/ 
 
 # 📚 Aprendizados:
-Fiz uma pesquisa de campo sobre as funciondalidades de uma página para negociar ações, considerando as regras básicas de negócio e caracteristicas do mercado brasileiro e utilizando conhecimentos pessoais.
+Realizei pesquisas sobre as funciondalidades de uma página para negociação de ações, considerando as regras básicas de negócio e caracteristicas do mercado brasileiro, além de utilizar conhecimentos pessoais.
 
-Houve dificuldade para realização do deploy do back-end (API) de forma que fosse possível a correta chamada da rota criada na aplicação front end (Dersafio superado). As lógicas da lançamentos futuros e garantias foram complexas, o que gerou dificuldade no entendimento sobre decremento e incremento no saldo em conta, com suas implicações transacionais
+Houve dificuldade para realização do deploy do back-end (API) de forma que fosse possível a chamada da rota criada na aplicação front end (Desafio superado). As lógicas da lançamentos futuros e garantias foram complexas, o que gerou dificuldade no entendimento sobre decremento e incremento no saldo em conta, com suas implicações transacionais e valor de posição.
 
 # 👧 Colaborador
 Tabata Caroline Souto
