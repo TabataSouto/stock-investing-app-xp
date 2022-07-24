@@ -1,6 +1,12 @@
 # Stock Trader XP
 ![Imagem da aplicação](https://i.postimg.cc/htjLGyCB/Screenshot-from-2022-07-24-14-48-59.png)
 
+# ⁉️ Tomada de decisão na abordagem do desafio
+Utilizei alguns conceitos fundamentais de metodologias ágeis para desenvolver esta aplicação; havia metas diárias e bem definidas sobre o quanto deveria, minimamente, avançar no desenvolvimento daquele dia. Utilizei algum tempo matinal (daily) para refletir e compilar os desafios e problemas encontrados no dia anterior, além de pesquisar sobre possíveis resoluções dos mesmos. A escolha pela utilização da ferramenta do Redux Toolkit foi pensado como uma melhor prática de utilizar sempre os recursos mais atualizados disponíveis.
+Decidi fazer uma API ao invés de utilizar um arquivo “json” para profissionalizar o conteúdo da aplicação e praticar a integração entre front e back end.
+Habilitei alavancagem, possibilidade de operar em todos os lotes existentes (padrão e fracionário) e possibilidade de ficar vendido (aluguel de ações) com suas respectivas lógicas e regras de negócio, tendo alta correlação com uma aplicação real, para proporcionar uma experiência tão próxima quanto possível da realidade.
+A estratégia de tornar a aplicação mais próxima possível da realidade também norteou a implementação das funcionalidades de histórico de ordens, lançamentos futuros e garantias requeridas.
+
 # 💻 Descrição geral do projeto
 Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP Inc. A aplicação simula um ambiente real de negociação de ações em bolsa de valores, considerando as regras e caracteristicas do mercado brasileiro, com entrada por credenciais de acesso (Login, Senha, Token), escolha, acompanhamento e "boleta" para  operar ações, tipo de operação (compra ou venda), lotes (padrão ou fracionário), possibilidade de alavancagem da posição, aluguel de ações e, inclusive, inversão da posição atual de compra/venda para venda/compra em uma única ordem (tomando aluguel quando for necessário); senha eletronica para envio de ordem, histórico de ordens, com possibilidade de checagem e acompanhamento de todas as ordens executadas com suas caracteristicas pertinentes. Há controle de saldo com visualização de lançamentos futuros, garantias requeridas (para operações com BTC) e possibilidade transacional, com depósito e retirada financeira, esta ultima, para contas cadastradas.
 
