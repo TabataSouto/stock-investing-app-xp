@@ -18,7 +18,7 @@ function Buy() {
   }, [orderQtde, toBuy]);
 
   const handleChange = ({ target: { value } }) => {
-    setOrderQtde({ ...orderQtde, qtde: value });
+    setOrderQtde({ ...orderQtde, qtde: +value });
   };
 
   return (

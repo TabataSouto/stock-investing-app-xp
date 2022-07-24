@@ -8,19 +8,24 @@ import Button from '../../components/Button';
 import { fetchAssets } from '../../redux/reducers/assets';
 import loadingIcon from '../../images/loading.gif';
 import Style from './Style';
+import { updateExecutedOrder } from '../../redux/reducers/orders';
 
 function Assets() {
   const assets = useSelector((state) => state.assets.list);
-  const ordersExecuted = useSelector((state) => state.orders);
+  const ordersExecuted = useSelector((state) => state.orders.executedOrders);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (ordersExecuted.length > 0) {
+      const filtered = ordersExecuted.filter((el) => el.quantity !== 0);
+      dispatch(updateExecutedOrder(filtered));
+    }
     setTimeout(() => {
       dispatch(fetchAssets());
     }, 1000);
-  }, [ordersExecuted]);
+  }, []);
 
   return (
     <Style.AssetContainer>

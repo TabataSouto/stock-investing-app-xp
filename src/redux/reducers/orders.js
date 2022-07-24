@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = [];
+const initialState = {
+  executedOrders: [],
+};
 
 const orderSlice = createSlice({
   name: 'orders',
@@ -8,7 +10,7 @@ const orderSlice = createSlice({
   reducers: {
     addExecutedOrder: (state, { payload }) => {
       // verifica se o item já existe em carteira;
-      const item = state.find((o) => o.paper === payload.paper);
+      const item = state.executedOrders.find((o) => o.paper === payload.paper);
       if (item) {
         item.isBuy = payload.isBuy;
         item.isSell = payload.isSell;
@@ -25,8 +27,11 @@ const orderSlice = createSlice({
           item.amount += (payload.amount);
         }
       } else {
-        state.push(payload);
+        state.executedOrders.push(payload);
       }
+    },
+    updateExecutedOrder: (state, { payload }) => {
+      state.executedOrders = payload;
     },
   },
 });

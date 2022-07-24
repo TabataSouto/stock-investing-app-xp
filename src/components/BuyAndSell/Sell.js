@@ -11,7 +11,7 @@ function Sell() {
     asset: state.negotiation.asset[0],
     buy: state.buy.qtde,
     sell: state.sell.calc,
-    orders: state.orders,
+    orders: state.orders.executedOrders,
   }));
   const [orderQtde, setOrderQtde] = useState({ qtde: 0, value: toSell.asset.amount });
 
@@ -29,7 +29,7 @@ function Sell() {
   }, [orderQtde, toSell]);
 
   const handleChange = ({ target: { value } }) => {
-    setOrderQtde({ ...orderQtde, qtde: value });
+    setOrderQtde({ ...orderQtde, qtde: +value });
   };
 
   return (

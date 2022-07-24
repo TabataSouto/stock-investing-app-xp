@@ -10,7 +10,7 @@ import Style from './Style';
 
 function Orders() {
   const navigate = useNavigate();
-  const executedOrders = useSelector((state) => state.orders);
+  const executedOrders = useSelector((state) => state.orders.executedOrders);
   const [filtered, setFiltered] = useState('');
 
   const handleChange = (({ target: { value } }) => {

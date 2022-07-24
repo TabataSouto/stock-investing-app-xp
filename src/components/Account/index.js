@@ -53,7 +53,7 @@ function Account() {
               {' '}
               {/* ARRUMA ESSA PARTE DEPOIS DE MUDAR A LÓGICA PARA QUE
               RETORNE UM VALOR NEGATIVO */}
-              <span>{account.rentValue > 0 && (account.rentValue).toFixed(2)}</span>
+              <span>{account.rentValue > 0 && account.rentValue}</span>
             </li>
           </ul>
         </div>
