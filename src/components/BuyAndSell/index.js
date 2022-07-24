@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import orderType from '../../helpers/orderType';
-import { decrementBalance, incrementBalance, incrementBalanceRent } from '../../redux/reducers/account';
+import {
+  decrementBalance, incrementBalance, incrementBalanceRent,
+} from '../../redux/reducers/account';
 import { addExecutedOrder, historicOrders } from '../../redux/reducers/orders';
 import currentDate from '../../helpers/currentDate';
 import Buy from './Buy';
@@ -44,8 +46,8 @@ function BuyAndSell() {
       if (buy.qtde > 0) {
         dispatch(decrementBalance(order));
       }
-      if (sell.qtde > 0 && sell.isRent) {
-        dispatch(incrementBalanceRent(order));
+      if (order.quantity < 0) {
+        dispatch(incrementBalanceRent(order.amount));
       }
       if (sell.qtde > 0) {
         dispatch(incrementBalance(order));
