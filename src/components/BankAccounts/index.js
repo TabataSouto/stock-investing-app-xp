@@ -17,7 +17,7 @@ function BankAccounts() {
   useEffect(() => {
     dispatch(selectedBank(bank.bankAccount));
     dispatch(valueTransition(bank.value));
-  }, [bank]);
+  }, [bank, account]);
 
   const handleChange = ({ target }) => {
     setBank({

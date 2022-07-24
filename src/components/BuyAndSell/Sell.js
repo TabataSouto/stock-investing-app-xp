@@ -18,7 +18,9 @@ function Sell() {
   useEffect(() => {
     const assetInWallet = toSell.orders
       .some((order) => order.paper === toSell.asset.paper);
-    const isBTC = toSell.orders.some((o) => o.quantity < orderQtde.qtde);
+    const filteredAssetInWallet = toSell
+      .orders.filter((order) => order.paper === toSell.asset.paper);
+    const isBTC = filteredAssetInWallet.some((o) => o.quantity < orderQtde.qtde);
     dispatch(sellWithcBTC(isBTC));
     dispatch(addQtde(orderQtde));
     dispatch(calcPurchase(orderQtde));

@@ -21,12 +21,11 @@ const accoutSlice = createSlice({
     },
     incrementBalance: (state, { payload }) => {
       state.balance += payload.amount;
+      state.leveradedValue = state.balance;
     },
     decrementBalance: (state, { payload }) => {
       state.balance -= payload.amount;
-      if (state.balance < 0) {
-        state.leveradedValue += state.balance;
-      }
+      state.leveradedValue = state.balance;
     },
     isLeveraged: (state, action) => {
       state.isLeveraged = action.payload >= state.balance;
@@ -42,6 +41,7 @@ const accoutSlice = createSlice({
     },
     deposit: (state, action) => {
       state.balance += action.payload;
+      state.leveradedValue = state.balance;
     },
     withdrawal: (state, action) => {
       state.balance -= action.payload;

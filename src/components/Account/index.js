@@ -37,6 +37,9 @@ function Account() {
         dispatch(withdrawal(transitionValue));
         dispatch(notAllowed(false));
       } else if (operationType === 'Depósito') {
+        // if (account.balance < 0) {
+
+        // }
         dispatch(deposit(transitionValue));
         dispatch(notAllowed(false));
       }
@@ -62,7 +65,7 @@ function Account() {
               Lançamentos futuros:
               {' '}
               <span>
-                { (account.leveradedValue).toFixed(2) }
+                { account.leveradedValue > 0 ? 0.00 : (account.leveradedValue).toFixed(2)}
               </span>
             </li>
             <li>
