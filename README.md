@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Stock Trader XP
+![Imagem da aplicação](https://i.postimg.cc/htjLGyCB/Screenshot-from-2022-07-24-14-48-59.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 💻 Funcionalidades especificas
 
-## Available Scripts
+Descrição geral do projeto -  Esta aplicação foi desenvolvida individualmente para o  desafio técnnico XP Inc. A aplicação simula um ambiente real de negociação de ações em bolsa de valores, considerando as regras e caracteristicas do mercado brasileiro, com entrada por credenciais de acesso (Login, Senha, Token), escolha, acompanhamento e "boleta" para  operar ações, tipo de operação (compra, venda), lotes (padrão ou fracionário), possibilidade de alavancagem da posição, aluguel de ações e, inclusive,inversão da posição atual de compra/venda para venda/compra em uma única ordem (tomando aluguel quando for necessário), senha eletronica para envio de ordem, histórico de ordens, sendo possivel checar todas as ordens executadas com todas as caracteristicas pertinentes. Há controle de saldo com visualização de lançamentos futuros, garantidas requeridas (para operações com BTC) e possibilidade transacional, com depósito e retirada financeira, esta ultima, para contas cadastradas.
 
-In the project directory, you can run:
+# Implementações extras
 
-### `npm start`
+API (Database)
+- Criação API de ações
+Página de Login
+- Token de validação para acesso
+Pagina de negociação
+- Operações alavancadas
+- Operações vendidas com "virada de mão" (inversão de posição)
+- Aluguel de ações
+- Negociação por lote (Padrão, Fracionário)
+- Assinatura eletronica para envio de ordens
+Pagina de consulta histórico de ordens
+- Histórico de ordens executadas com caracteristicas fundamentais (preço médio, lado, status, data e hora)
+Pagina controle financeiro
+- Lançamentos futuros
+- Garantias requeridas
+- Seleção de conta bancária para retirada financeira
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Regras de negocio:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Login - 
+O E-mail deve ser informado em formato válido
+A senha deve ser maior ou igual à 6 caracteres 
+O Token deve ser igual à 6 caracteres
 
-### `npm test`
+Negociações - 
+Não é possivel realizar vendas caso a ação não esteja em carteira
+Se a quantidade negociada for entre 1 e 99 quantidades, o lote será fracionário.
+Se a quantidade negociada for 100 ou maior, o lote será padrão.
+Se for informado quantidade maior que zero no campo de compra, o campo de venda é desabilitado.
+Se for informado quantidade maior que zero no campo de venda, o campo de compra é desabilitado.
+Para operações de compra, caso o valor da ordem seja maior do que o saldo disponivel em conta (Dafault 50) a ordem será alavancada.
+Para operações de venda, se a quantidade vendida for menor ou igual a quantidade em carteira, não haverá aluguel (BTC)
+Para operações de venda, se a quantidade vendida for maior do que a quantidade em carteira (operação virada de mão), haverá aluguel de ações para honrar a operação vendida.
+A Assinatura eletronica deve ser maior ou igual 6 e menor que 9 caracteres.
+A operação de compra ou venda so é permitida se a assinatura eletronica for informada corretamente.
+O Campo financeiro da ordem mostra o valor total da operação (valor unitário da ação multiplicado pela quantidade)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Histórico de ordens
+Quando operação de compra ou venda é realizada na tela de negociação, as caracteristicas fundamentais da ordem (lado, papel, lote, preço médio, quantidade, status e data/hora) são preenchidas com as informações da execução.
+Campo de filtro pelo código do papel
 
-### `npm run build`
+Saldo:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Se houver uma compra com saldo maior do que o disponível em conta, a diferença do saldo será exibido em lançamentos futuros (negativo)
+Se houver uma compra com saldo igual ou menor do que o disponivel em conta, o valor da compra será debitado do saldo em conta.
+Se houver uma venda com quantidade menor ou igual ao disponivel em carteira, o valor da venda será acrescido no saldo em conta ou abatido do lançamentos futuros negativo.
+Se houver uma venda com quantidade maior do que o disponivel em carteira, haverá BTC, sendo acrescido o valor da venda no saldo em conta e o mesmo valor negativo no campo garantias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Depósito
+O saldo em contas, por default, é de 50.00
+Depósito de saldo é acrescido ao saldo em conta caso este seja maior que zero
+Deposito de saldo é diminui o valor negativo de um lançamento futuro, caso haja.
+Se houver lançamentos futuros negativo e houver um depósito de saldo maior que o lançamento futuro, a diferença será disponibilizada em saldo em conta.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Retirada:
+Se o saldo em conta for maior que zero, o saldo pode se retirado, total ou parcialmente.
+Se houver tentativa de retirada com saldo zero, será negado.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Tecnologias:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Front-end: React, Redux Toolkit, Hooks, JavaScript, Styled Components.
+Back- End: Node, Express, JavaScript, ORM - Sequelize
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Inicialização:
 
-## Learn More
+Clone o projeto
+git clone git@github.com:TabataSouto/stock-investing-app-xp.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Entre no diretório do projeto
+cd stock-investing-app-xp
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Instale as dependências
+npm install
 
-### Code Splitting
+Rode a aplicação
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Para rodar os testes realizados
+npm test
 
-### Analyzing the Bundle Size
+# Status do projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Concluído
 
-### Making a Progressive Web App
+# Deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+O Deploy deste projeto foi realizado no Vercel https://stock-trader-mu.vercel.app/ 
 
-### Advanced Configuration
+# Aprendizados:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Fiz uma pesquisa de campo sobre as funciondalidades de uma página para negociar ações, considerando as regras básicas de negócio e caracteristicas do mercado brasileiro e utilizando conhecimentos pessoais.
 
-### Deployment
+Houve dificuldade para realização do deploy do back-end (API) de forma que fosse possível a correta chamada da rota criada na aplicação front end (Dersafio superado). As lógicas da lançamentos futuros e garantias foram complexas, o que gerou dificuldade no entendimento sobre decremento e incremento no saldo em conta, com suas implicações transacionais
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Colaborador
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tabata Caroline Souto
