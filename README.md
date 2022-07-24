@@ -68,19 +68,11 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
   - Se houver tentativa de retirada com saldo zero, será negado.
 
 # 🛠 Tecnologias:
-
-- Front-end:
-  - React.
-  - Redux Toolkit.
-  - Hooks.
-  - JavaScript.
-  - Styled Components.
-
-- Back-end:
-  - Node.
-  - Express.
-  - JavaScript.
-  - ORM (Sequelize).
+- React.
+- Redux Toolkit.
+- Hooks.
+- JavaScript.
+- Styled Components.
 
 # ⚡ Rodando localmente:
 
