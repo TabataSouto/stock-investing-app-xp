@@ -20,11 +20,11 @@ function Table({ orders }) {
         { orders.map(({
           paper, isBuy, direction, amount, quantity, status, dataAndHour,
         }) => (
-          <tr key={paper}>
+          <tr key={dataAndHour}>
             <td>{isBuy ? 'Compra' : 'Venda'}</td>
             <td>{paper}</td>
             <td>{direction}</td>
-            <td>{(amount)}</td>
+            <td>{(amount).toFixed(2)}</td>
             <td>{quantity}</td>
             <td>{status}</td>
             <td>{dataAndHour}</td>

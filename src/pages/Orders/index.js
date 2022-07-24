@@ -10,7 +10,7 @@ import Style from './Style';
 
 function Orders() {
   const navigate = useNavigate();
-  const executedOrders = useSelector((state) => state.orders.executedOrders);
+  const historyOrders = useSelector((state) => state.orders.historyOrders);
   const [filtered, setFiltered] = useState('');
 
   const handleChange = (({ target: { value } }) => {
@@ -33,7 +33,7 @@ function Orders() {
           max={100}
         />
         <Table
-          orders={executedOrders
+          orders={historyOrders
             .filter((asset) => asset.paper
               .toLowerCase().includes(filtered))}
         />
