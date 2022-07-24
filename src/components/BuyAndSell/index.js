@@ -98,14 +98,11 @@ function BuyAndSell() {
                 { (account.balance - buy.calc) < 0 && buy.qtde > 0 ? 'sim' : 'não' }
               </span>
             </li>
-            { sell.qtde > 0 && sell.isRent
-              && (
+            { !sell.inWallet && (
               <li>
-                Tomar aluguel (BTC):
-                {' '}
-                <span>sim</span>
+                BTC indisponível para esse ativo!
               </li>
-              ) }
+            ) }
           </ul>
         </div>
         <form>

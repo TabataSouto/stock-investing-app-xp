@@ -24,8 +24,15 @@ const FinancialOrderMain = styled.main`
   padding: 0.8cm 2cm;
   & > div {
     height: 3.5em;
-    ul span {
-      font-weight: 700;
+    ul {
+      li:nth-child(3) {
+        color: #4c4c4c;
+        border-bottom: 2px solid ${({ theme }) => theme.borders.statusOrdersButton};
+        width: 15em;
+      }
+      span {
+        font-weight: 700
+      }
     }
   }
 `;
