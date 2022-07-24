@@ -30,58 +30,57 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
 # 📋 Regras de negocio:
 
 ##### Login
-- O E-mail deve ser informado em formato válido
-- A senha deve ser maior ou igual à 6 caracteres 
-- O Token deve ser igual à 6 caracteres
+- O E-mail deve ser informado em formato válido.
+- A Senha deve ser maior ou igual à 6 caracteres.
+- O Token deve ser igual à 6 caracteres.
 
 #### Negociações
-- Não é possivel realizar vendas caso a ação não esteja em carteira
+- Não é possivel realizar vendas caso a ação não esteja em carteira.
 - Se a quantidade negociada for entre 1 e 99 quantidades, o lote será fracionário.
-- Se a quantidade negociada for 100 ou maior, o lote será padrão.
+- Se a quantidade negociada for 100 quantidades ou mais, o lote será padrão.
 - Se for informado quantidade maior que zero no campo de compra, o campo de venda é desabilitado.
 - Se for informado quantidade maior que zero no campo de venda, o campo de compra é desabilitado.
-- Para operações de compra, caso o valor da ordem seja maior do que o saldo disponivel em conta (Dafault 50) a ordem será alavancada.
-- Para operações de venda, se a quantidade vendida for menor ou igual a quantidade em carteira, não haverá aluguel (BTC)
+- Para operações de compra, caso o valor da ordem seja maior do que o saldo disponivel em conta (por default a aplicação abre com saldo de 50) a ordem será alavancada.
+- Para operações de venda, se a quantidade vendida for menor ou igual a quantidade em carteira, não haverá aluguel (BTC).
 - Para operações de venda, se a quantidade vendida for maior do que a quantidade em carteira (operação virada de mão), haverá aluguel de ações para honrar a operação vendida.
-- A Assinatura eletronica deve ser maior ou igual 6 e menor que 9 caracteres.
-- A operação de compra ou venda so é permitida se a assinatura eletronica for informada corretamente.
-- O Campo financeiro da ordem mostra o valor total da operação (valor unitário da ação multiplicado pela quantidade)
+- A Assinatura eletrônica deve ser maior ou igual a 6 e menor que 9 caracteres.
+- A operação de compra ou venda só é permitida se a assinatura eletrônica for informada corretamente.
+- O Campo financeiro da ordem mostra o valor total da operação (valor unitário da ação multiplicado pela quantidade da ordem).
 
 #### Histórico de ordens
 - Quando operação de compra ou venda é realizada na tela de negociação, as caracteristicas fundamentais da ordem (lado, papel, lote, preço médio, quantidade, status e data/hora) são preenchidas com as informações da execução.
-- Campo de filtro pelo código do papel
+- Campo de filtro pelo código do papel.
 
 #### Saldo:
-- Se houver uma compra com saldo maior do que o disponível em conta, a diferença do saldo será exibido em lançamentos futuros (negativo)
+- Se houver uma compra com saldo maior do que o disponível em conta, a diferença do saldo será exibido em lançamentos futuros (negativo).
 - Se houver uma compra com saldo igual ou menor do que o disponivel em conta, o valor da compra será debitado do saldo em conta.
-- Se houver uma venda com quantidade menor ou igual ao disponivel em carteira, o valor da venda será acrescido no saldo em conta ou abatido do lançamentos futuros negativo.
-- Se houver uma venda com quantidade maior do que o disponivel em carteira, haverá BTC, sendo acrescido o valor da venda no saldo em conta e o mesmo valor negativo no campo garantias
+- Se houver uma venda com quantidade menor ou igual à quantidade daquele papel disponivel em carteira, o valor da venda será acrescido no saldo em conta ou abatido do lançamentos futuros.
+- Se houver uma venda com quantidade maior do que o disponivel em carteira, haverá BTC (aluguel de ações), sendo acrescido o valor da venda no saldo em conta e o mesmo valor negativo no campo garantias.
 
 - Depósito
-  - O saldo em contas, por default, é de 50.00
-  - Depósito de saldo é acrescido ao saldo em conta caso este seja maior que zero
-  - Deposito de saldo é diminui o valor negativo de um lançamento futuro, caso haja.
-  - Se houver lançamentos futuros negativo e houver um depósito de saldo maior que o lançamento futuro, a diferença será disponibilizada em saldo em conta.
+  - O saldo em conta, por default, é de 50.00.
+  - O saldo é acrescido ao saldo em conta, caso este seja maior ou igual a zero e não haja lançamentos futuros.
+  - O saldo diminui o valor negativo de um lançamento futuro, caso haja.
+  - Se houver lançamentos futuros negativos e houver um saldo maior que o lançamento futuro, a diferença será disponibilizada em saldo em conta.
 
 - Retirada:
   - Se o saldo em conta for maior que zero, o saldo pode se retirado, total ou parcialmente.
   - Se houver tentativa de retirada com saldo zero, será negado.
 
-
 # 🛠 Tecnologias:
 
 - Front-end:
-  - React
-  - Redux ToolkitHooks
-  - JavaScript
-  - Styled Components
+  - React.
+  - Redux Toolkit.
+  - Hooks.
+  - JavaScript.
+  - Styled Components.
 
 - Back-end:
-  - Node
-  - Express
-  - JavaScript
-  - ORM (Sequelize)
-
+  - Node.
+  - Express.
+  - JavaScript.
+  - ORM (Sequelize).
 
 # ⚡ Rodando localmente:
 
