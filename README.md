@@ -8,7 +8,7 @@
 - Habilitei alavancagem, possibilidade de operar em todos os lotes existentes (padrão e fracionário), além da possibilidade de ficar vendido (aluguel de ações) com suas respectivas lógicas e regras de negócio, tendo alta correlação com uma aplicação real, para proporcionar uma experiência tão próxima quanto possível da realidade; esse desejo também norteou a implementação das funcionalidades de histórico de ordens, lançamentos futuros e garantias requeridas.
 
 # 💻 Descrição geral do projeto
-Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP Inc. A aplicação simula um ambiente real de negociação de ações em bolsa de valores, considerando as regras e caracteristicas do mercado brasileiro, com entrada por credenciais de acesso (Login, Senha, Token), escolha, acompanhamento e "boleta" para  operar ações, tipo de operação (compra ou venda), lotes (padrão ou fracionário), possibilidade de alavancagem da posição, aluguel de ações e, inclusive, inversão da posição atual de compra/venda para venda/compra em uma única ordem (tomando aluguel quando for necessário); senha eletronica para envio de ordem, histórico de ordens, com possibilidade de checagem e acompanhamento de todas as ordens executadas com suas caracteristicas pertinentes. Há controle de saldo com visualização de lançamentos futuros, garantias requeridas (para operações com BTC) e possibilidade transacional, com depósito e retirada financeira, esta ultima, para contas cadastradas.
+Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP Inc. A aplicação simula um ambiente real de negociação de ações em bolsa de valores, considerando as regras e características do mercado brasileiro, com entrada por credenciais de acesso (Login, Senha, Token), escolha, acompanhamento e "boleta" para  operar ações, tipo de operação (compra ou venda), lotes (padrão ou fracionário), possibilidade de alavancagem da posição, aluguel de ações e, inclusive, inversão da posição atual de compra/venda para venda/compra em uma única ordem (tomando aluguel quando for necessário); senha eletrônica para envio de ordem, histórico de ordens, com possibilidade de checagem e acompanhamento de todas as ordens executadas com suas características pertinentes. Há controle de saldo com visualização de lançamentos futuros, garantias requeridas (para operações com BTC) e possibilidade transacional, com depósito e retirada financeira, esta ultima, para contas cadastradas.
 
 # 💡 Implementações extras
 
@@ -26,7 +26,7 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
 - Assinatura eletrônica para envio de ordens.
 
 #### Pagina de consulta histórico de ordens
-- Histórico de ordens executadas com caracteristicas fundamentais (preço médio, lado, status, data e hora).
+- Histórico de ordens executadas com características fundamentais (preço médio, lado, status, data e hora).
 
 #### Pagina controle financeiro
 - Lançamentos futuros.
@@ -41,12 +41,12 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
 - O Token deve ser igual à 6 caracteres.
 
 #### Negociações
-- Não é possivel realizar vendas caso a ação não esteja em carteira.
+- Não é possível realizar vendas caso a ação não esteja em carteira.
 - Se a quantidade negociada for entre 1 e 99 quantidades, o lote será fracionário.
 - Se a quantidade negociada for 100 quantidades ou mais, o lote será padrão.
 - Se for informado quantidade maior que zero no campo de compra, o campo de venda é desabilitado.
 - Se for informado quantidade maior que zero no campo de venda, o campo de compra é desabilitado.
-- Para operações de compra, caso o valor da ordem seja maior do que o saldo disponivel em conta (por default a aplicação abre com saldo de 50) a ordem será alavancada.
+- Para operações de compra, caso o valor da ordem seja maior do que o saldo disponível em conta (por default a aplicação abre com saldo de 50) a ordem será alavancada.
 - Para operações de venda, se a quantidade vendida for menor ou igual a quantidade em carteira, não haverá aluguel (BTC).
 - Para operações de venda, se a quantidade vendida for maior do que a quantidade em carteira (operação virada de mão), haverá aluguel de ações para honrar a operação vendida.
 - A Assinatura eletrônica deve ser maior ou igual a 6 e menor que 9 caracteres.
@@ -54,14 +54,14 @@ Esta aplicação foi desenvolvida individualmente para o  desafio técnico XP In
 - O Campo financeiro da ordem mostra o valor total da operação (valor unitário da ação multiplicado pela quantidade da ordem).
 
 #### Histórico de ordens
-- Quando operação de compra ou venda é realizada na tela de negociação, as caracteristicas fundamentais da ordem (lado, papel, lote, preço médio, quantidade, status e data/hora) são preenchidas com as informações da execução.
+- Quando operação de compra ou venda é realizada na tela de negociação, as características fundamentais da ordem (lado, papel, lote, preço médio, quantidade, status e data/hora) são preenchidas com as informações da execução.
 - Campo de filtro pelo código do papel.
 
 #### Saldo:
 - Se houver uma compra com saldo maior do que o disponível em conta, a diferença do saldo será exibido em lançamentos futuros (negativo).
-- Se houver uma compra com saldo igual ou menor do que o disponivel em conta, o valor da compra será debitado do saldo em conta.
+- Se houver uma compra com saldo igual ou menor do que o disponível em conta, o valor da compra será debitado do saldo em conta.
 - Se houver uma venda com quantidade menor ou igual à quantidade daquele papel disponivel em carteira, o valor da venda será acrescido no saldo em conta ou abatido do lançamentos futuros.
-- Se houver uma venda com quantidade maior do que o disponivel em carteira, haverá BTC (aluguel de ações), sendo acrescido o valor da venda no saldo em conta e o mesmo valor negativo no campo garantias.
+- Se houver uma venda com quantidade maior do que o disponível em carteira, haverá BTC (aluguel de ações), sendo acrescido o valor da venda no saldo em conta e o mesmo valor negativo no campo garantias.
 
 - Depósito
   - O saldo em conta, por default, é de 50.00.
@@ -114,7 +114,7 @@ Concluído
 O Deploy deste projeto foi realizado no [Vercel](https://stock-trader-mu.vercel.app/).
 
 # 📚 Aprendizados:
-Realizei pesquisas sobre as funciondalidades de uma página para negociação de ações, considerando as regras básicas de negócio e caracteristicas do mercado brasileiro, além de utilizar conhecimentos pessoais.
+Realizei pesquisas sobre as funcionalidades de uma página para negociação de ações, considerando as regras básicas de negócio e características do mercado brasileiro, além de utilizar conhecimentos pessoais.
 
 Houve dificuldade para realização do deploy do back-end (API) de forma que fosse possível a chamada da rota criada na aplicação front end (Desafio superado). As lógicas da lançamentos futuros e garantias foram complexas, o que gerou dificuldade no entendimento sobre decremento e incremento no saldo em conta, com suas implicações transacionais e valor de posição.
 
