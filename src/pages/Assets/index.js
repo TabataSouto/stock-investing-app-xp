@@ -52,7 +52,7 @@ function Assets() {
           name="orders-status"
           disabled={false}
           onClick={() => navigate('/orders')}
-          title="Status ordens"
+          title="Histórico de ordens"
         />
       </Style.MainAssets>
       <Footer />
