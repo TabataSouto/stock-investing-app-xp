@@ -10,7 +10,10 @@ function Header() {
 
   useEffect(() => {
     const getStorage = storage.getUser();
-    setUserStorage(getStorage.email);
+    console.log(getStorage);
+    if (getStorage !== null) {
+      setUserStorage(getStorage.email);
+    }
   }, [userStorage]);
 
   return (
@@ -20,7 +23,7 @@ function Header() {
       </div>
       <div>
         { !loggedUser
-          ? <p>{`Último acesso: ${userStorage}`}</p>
+          ? <p>{userStorage && `Último acesso: ${userStorage}`}</p>
           : <p>{loggedUser}</p> }
       </div>
     </Style.HeaderContainer>
