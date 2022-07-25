@@ -23,7 +23,7 @@ function Header() {
       </div>
       <div>
         { !loggedUser
-          ? <p>{userStorage && `Último acesso: ${userStorage}`}</p>
+          ? <p>{userStorage ? `Último acesso: ${userStorage}` : 'Último acesso: Nenhum usuário encontrado'}</p>
           : <p>{loggedUser}</p> }
       </div>
     </Style.HeaderContainer>
