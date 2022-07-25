@@ -111,7 +111,7 @@ npm test
 Concluído
 
 # 💽 Deploy
-O Deploy deste projeto foi realizado no [Vercel](https://stock-trader-mu.vercel.app/).
+O Deploy deste projeto foi realizado no [Vercel](https://stock-investing-app-xp.vercel.app/).
 
 # 📚 Aprendizados:
 Realizei pesquisas sobre as funcionalidades de uma página para negociação de ações, considerando as regras básicas de negócio e características do mercado brasileiro, além de utilizar conhecimentos pessoais.
