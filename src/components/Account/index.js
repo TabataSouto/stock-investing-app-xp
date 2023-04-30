@@ -18,7 +18,6 @@ function Account() {
   }));
 
   useEffect(() => {
-    // console.log('ordens executadas', orders);
     if (orders !== undefined) {
       console.log('valores de garantia', orders.filter((order) => order.quantity < 0)
         .reduce((acc, total) => acc + total.amount, 0));
@@ -37,9 +36,6 @@ function Account() {
         dispatch(withdrawal(transitionValue));
         dispatch(notAllowed(false));
       } else if (operationType === 'Depósito') {
-        // if (account.balance < 0) {
-
-        // }
         dispatch(deposit(transitionValue));
         dispatch(notAllowed(false));
       }

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const URL_API = 'https://asset-db-prsl-xp.herokuapp.com/assets';
+const URL_API = 'https://gifted-gabardine-goat.cyclic.app/assets';
 
 const initialState = {
   list: [],
