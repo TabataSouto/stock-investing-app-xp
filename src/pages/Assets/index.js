@@ -5,13 +5,15 @@ import CardAssets from '../../components/CardAssets';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import Button from '../../components/Button';
-import { fetchAssets } from '../../redux/reducers/assets';
+// import { fetchAssets } from '../../redux/reducers/assets';
 import loadingIcon from '../../images/loading.gif';
 import Style from './Style';
 import { updateExecutedOrder } from '../../redux/reducers/orders';
+import assetsData from '../../assetsList';
 
 function Assets() {
-  const assets = useSelector((state) => state.assets.list);
+  // const assets = useSelector((state) => state.assets.list);
+  // const [assets, setAssets] = useState();
   const ordersExecuted = useSelector((state) => state.orders.executedOrders);
 
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ function Assets() {
       dispatch(updateExecutedOrder(filtered));
     }
     setTimeout(() => {
-      dispatch(fetchAssets());
+      // dispatch(fetchAssets());
     }, 1000);
   }, []);
 
@@ -36,12 +38,12 @@ function Assets() {
           assets={ordersExecuted}
         />
         {
-          assets.length
+          assetsData.length
             ? (
               <CardAssets
                 title="Disponíveis para investir:"
                 assets={
-              assets
+              assetsData
                 .filter((asset) => ordersExecuted
                   .every((order) => asset.paper !== order.paper))
               }
